@@ -59,7 +59,7 @@ app.use('/api/products',require('./routes/api/products'));
 
 
 mongoose
-    .connect(process.env.DbURL,{ useUnifiedTopology: true,useNewUrlParser: true,useFindAndModify: true,findOneAndUpdate: true, useFindAndModify:true})
+    .connect(process.env.DbURL,{ useUnifiedTopology: true,useNewUrlParser: true,useFindAndModify: true, useFindAndModify:true})
     .then(() => console.log("MongoDb Connected..."))
     .catch(err => console.log(err))
 
