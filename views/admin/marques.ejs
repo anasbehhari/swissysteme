@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/admin/ini.css">
+        <link rel="stylesheet" href="../css/admin/loader.css">
+
+    <title>marques</title>
+</head>
+
+<body>
+    <%- include("../components/admin/loader.ejs") %>
+
+    <%- include("../components/admin/nav.ejs",{acceuil:"",Categories:"",produits:"",settings:"",marques:"active",commandes:""})
+        %>
+        <main>
+            <%- include("../components/admin/header.ejs") %>
+                <% if ( typeof msg !='undefined' ) { %>
+                    <div class="alert <%= type %>">
+                        <div class="msg">
+                            <%= msg %>
+                        </div>
+                        <div class="close-btn">
+                            <i class="fa fa-times"></i>
+                        </div>
+                    </div>
+                    <% } %>
+                        <section id="anal">
+                            <div class="container-dashboard">
+                                <div class="con-7">
+                                    <div class="card-ov">
+                                        <div class="icon">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"> <g> <path d="M974.2,29.9c-5.5-15.4-22.9-23.6-38.8-18.2c-15.9,5.3-24.3,22.2-18.8,37.7c46.9,130.8-46.3,228.5-117.3,280.9l-28.8-39.9c-9.6-13.3-31.2-24.5-48-24.7l-161.1,0.7c-16.7-0.2-41.7,7.2-55.4,16.6L31.7,605.7c-23,15.6-28.6,46.4-12.5,68.7l215.7,299.3c16.1,22.3,41.9,19.6,64.9,4l474.5-322.8c13.7-9.4,29.4-29.6,35-45l50.4-154.2c5.5-15.4,2.2-38.9-7.5-52.3l-17.5-24.3C930.2,308.4,1029.2,183.1,974.2,29.9z M753.5,488.3c-36.8,25-87.5,16.3-113.2-19.4c-25.8-35.7-16.9-85,20-110c29.2-19.8,67.1-18.4,94.4,0.9c-13.7,8-23.2,12.6-24.9,13.5c-15.2,7-21.8,24.6-14.6,39.4c5.2,10.7,16.2,17,27.6,17c4.4,0,8.8-0.9,13-2.8c9.8-4.5,20.3-9.9,31.3-16.2C791.9,439.7,780,470.3,753.5,488.3z"> </path> </g> </svg>
+                                        </div>
+                                        <div class="number">
+                                            <%= typeof num !='undefined' ? num : '' %>
+                                        </div>
+                                        <div class="total">Totale marques</div>
+                                    </div>
+                                </div>
+                                <div class="con-7">
+                                    <div class="card-desc-ui">
+                                        <div class="top-sec">
+                                            <div class="text">Marques</div>
+                                            <div class="icon">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+                                                <g>
+                                                    <path
+                                                        d="M974.2,29.9c-5.5-15.4-22.9-23.6-38.8-18.2c-15.9,5.3-24.3,22.2-18.8,37.7c46.9,130.8-46.3,228.5-117.3,280.9l-28.8-39.9c-9.6-13.3-31.2-24.5-48-24.7l-161.1,0.7c-16.7-0.2-41.7,7.2-55.4,16.6L31.7,605.7c-23,15.6-28.6,46.4-12.5,68.7l215.7,299.3c16.1,22.3,41.9,19.6,64.9,4l474.5-322.8c13.7-9.4,29.4-29.6,35-45l50.4-154.2c5.5-15.4,2.2-38.9-7.5-52.3l-17.5-24.3C930.2,308.4,1029.2,183.1,974.2,29.9z M753.5,488.3c-36.8,25-87.5,16.3-113.2-19.4c-25.8-35.7-16.9-85,20-110c29.2-19.8,67.1-18.4,94.4,0.9c-13.7,8-23.2,12.6-24.9,13.5c-15.2,7-21.8,24.6-14.6,39.4c5.2,10.7,16.2,17,27.6,17c4.4,0,8.8-0.9,13-2.8c9.8-4.5,20.3-9.9,31.3-16.2C791.9,439.7,780,470.3,753.5,488.3z">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <% if (typeof marquesData!="undefined" ) { %>
+                                                <% marquesData.forEach(el=> { %>
+                                                    <li>
+                                                        <%= el.brandName %>  <strong>Id :<%= el._id %></strong>
+                                                    </li>
+
+                                                    <% }) %>
+                                                        <% } %>
+
+
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </section>
+                        <section id="Add-cat">
+                            <div class="title">Ajouter une marque</div>
+                            <form action method="POST" enctype="multipart/form-data">
+                                <div>
+                                    <label for="marqName">Nom de marque</label>
+                                    <input required type="text" placeholder=" Entrer le nom du marque ici "
+                                        id="marqName" name="marqName"
+                                        value="<%= typeof value != 'undefined' ? value : '' %>">
+                                </div>
+                               
+                                <div>
+                                    <label for="marqPic">Photo de marque</label>
+                                    <input required style="margin-top: 1em;" type="file" name="marqPic" id="marqPic" accept="image/*" onchange="loadFile(event)">
+                                    <div class="con">
+                                        <img class="cover" id="output" />
+                                        <span>Aperçu de l'image </span>
+                                    </div>
+                                </div>
+
+                                <button>Ajouter</button>
+                            </form>
+                        </section>
+                        
+                        <section id="Add-cat">
+                            <div class="title">Supprimer une marque</div>
+                            <form action="" method="POST">
+                                <div>
+                                    <label for="marqId">Id de marque</label>
+                                    <input required type="text" placeholder=" Entrer id de marque  ici " id="marqId"
+                                        name="marqId" value="<%= typeof value2 != 'undefined' ? value2 : '' %>">
+                                </div>
+
+                                <button type="submit">Supprimer</button>
+                            </form>
+                        </section>
+        </main>
+        <script src="../javascript/closebtn.js"></script>
+        <script src="../javascript/ini.Prod.js"></script>
+                <script src="../javascript/loader.js"></script>
+
+
+
+</body>
+
+</html>

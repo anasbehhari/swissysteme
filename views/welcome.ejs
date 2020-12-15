@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/welcome.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <%- include('components/loader.ejs') %>
+    <%- include('components/nav.ejs',{acceuil:"active",produits:"",catalogue:"",contact:""}) %>
+    <div class="video-container">
+        <div class="video-con">
+            <video autoplay="" loop="" muted="">
+                <source src="media/innergex-intro.mp4" autoplay="" controls="false" type="video/mp4">
+            </video>
+        </div>
+        <div class="text-display">
+            <div class="line-top line"></div>
+            <div class="text">
+                <span>Produits</span>
+                <br>
+                <small>D'une Qualité maximale et <br> excellent services</small>
+            </div>
+            <div class="line-btm line"></div>
+        </div>
+    </div>
+    <section id="particles-js">
+        <div class="our-company">
+            <p class="ourcompany">
+                <img id="logo67" src="media/commas.svg" alt="">
+                <span>Swissysteme</span> est une société de distribution, d'installation et de conseils. Cette société
+                est
+                née d'une volonté de
+                répondre au mieux aux attentes des particuliers et industriels dans le secteur d'électricité, des
+                énergies
+                renouvelables, de climatisation et de plomberie.
+
+            </p>
+
+        </div>
+        <section id="our-services" class="part ">
+            <div class="dt-sec-grp con78">
+                <div class="con-secgRP" style="width: fit-content;">
+                    <div class="bg-title">
+                        <div class="text">
+                            <div class="line-top1 line"></div>
+                            NOTRE ENGAGMENT
+                            <div class="line-btm2 line"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <ul>
+
+                    <li>UNE <span>QUALITÉ</span> D'EXÉCUTION ASSURÉE PAR LE <span>PROFESSIONNALISME</span>, DE NOS
+                        INSTALLATEURS.
+                    </li>
+                    <li>UN <span>SUIVI CONTINU</span> DE LA CONCEPTION AU RACCORDEMENT.</li>
+                    <li>DES PRIX <span>ATTRACTIFS</span> ET COMPÉTITIFS.</li>
+                    <li>DU MATÉRIEL <span>HAUT DE GAMME</span>, GARANTI POUR SON RENDEMENT ET SA LONGÉVITÉ
+                        <span>EXCEPTIONNELS.</span></li>
+
+                </ul>
+            </div>
+            </div>
+            <div class="pic-side-poster con78">
+                <img src="media/ourengagement.jpg" alt="">
+            </div>
+        </section>
+        <section id="our-engagment" class="part part2">
+            <div class="dt-sec-grp con78">
+                <div class="con-secgRP">
+                    <div class="bg-title">
+                        <div class="text">
+                            <div class="line-top1 line"></div>
+
+                            NOTRE SERVICES
+                            <div class="line-btm2 line"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <ul>
+                    <div>
+                        <li>REPONDRE A VOS BESION</li>
+                        <li>S'ADAPTER À VOS PLANNINGS</li>
+                    </div>
+                    <div>
+                        <li>ACCOMPAGNER VOS PROJETS</li>
+                        <li>ÊTRE PROCHE DE VOUS</li>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="pic-side-poster con78">
+                <img src="media/ourservicesE.jpg" alt="">
+            </div>
+        </section>
+
+
+        <section id="activite" style="margin-top: 2em;">
+            <div class="text" style="font-size: 1.4em !important;">
+                Nos activités
+            </div>
+            <div class="row">
+                <div class="col c1">
+                    <div class="front">
+                        <img src="media/light-bulb.jpg" alt="">
+                        <div class="content">
+                            <div class="border-fr"></div>
+                        <div class="name ">Electricité</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="border b1"></div>
+                        <div class="name">Electricité</div>
+                        <div class="textP">SwisSysteme dispose d'un service spécialisée dans l'électricité générale et
+                            l'industrie du bâtiment. Appuyée sur des spécialistes hautement qualifiés et sur un
+                            savoir-faire inégalé, SwisSysteme vous propose des solutions sur mesure, répondant aux
+                            exigences d'un travail de qualité. De la réalisation des schémas globaux à l'optimisation
+                            des ressources en passant par le conseil, SwisSysteme vous garantit un service fiable et de
+                            qualité.
+                        </div>
+                    </div>
+                </div>
+                <div class="col c2">
+                    <div class="front">
+                        <img src="media/solar.jpg" alt="">
+                       <div class="content">
+                        <div class="border-fr"></div>
+                        <div class="name">Photovoltaïque</div>
+                       </div>
+                    </div>
+                    <div class="back">
+                        <div class="border b2"></div>
+                        <div class="name">Photovoltaïque</div>
+                        <div class="textP">Nous avons pour mission de fournir des solutions solaires photovoltaiques,
+                            respectueuses de l’environnement, avec une qualité de classe mondiale.
+                        </div>
+                    </div>
+                </div>
+                <div class="col c3">
+                    <div class="front">
+                        <img src="media/clima.jpeg" alt="">
+                        <div class="content">
+                            <div class="border-fr"></div>
+                        <div class="name">Climatisation</div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="border b3"></div>
+                        <div class="name">Climatisation</div>
+                        <div class="textP">Puisque votre bien-être est au cœur de nos préoccupations, SwisSysteme met à
+                            votre disposition son savoir-faire et son expertise pour vous offrir les meilleures
+                            prestations en matière de climatisation et de chauffage.
+                            Forte de sa compétence dans ce domaine, notre équipe vous conseille et vous compagne dans la
+                            réalisation d'installations fiables et optimales qui respectent l'environnement.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partenaire" style="margin-top: 2em;">
+            <div class="text" style="font-size: 1.4em !important;">
+                Nos partenaires
+
+            </div>
+            <div class="slider">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/wibeee.png"
+                                alt="">
+
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/huawei.png"
+                                alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/citel.png"
+                                alt="">
+                        </div>
+                        <div class="swiper-slide">
+
+                            <img src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/jasolar.png"
+                                alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/jinko.png"
+                                alt="">
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+
+                </div>
+
+            </div>
+        </section>
+    </section>
+    <%- include('components/footer.ejs') %>
+
+    <script src="javascript/loader.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="javascript/swiper.js"></script>
+    <script src="javascript/nav.js"></script>
+    <script src="javascript/particles.js"></script>
+    <script src="javascript/setup.js"></script>
+
+
+</body>
+
+</html>

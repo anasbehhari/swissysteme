@@ -1,0 +1,123 @@
+@use '';
+main {
+  position: absolute;
+  left: 8em;
+  height: 100%;
+  width: calc(100% - 8em);
+  overflow: hidden auto;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main header {
+  width: 95%;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.05);
+  margin-top: 0.7em;
+  border-radius: 5px;
+  height: 2em;
+  padding: 0.2em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0.9em;
+}
+
+main header .iconMain {
+  position: relative;
+  margin: 0 1em;
+}
+
+main header .iconMain svg {
+  width: 0.8em;
+  fill: #727375;
+}
+
+main header .navs-ng {
+  margin: 0.7em;
+}
+
+main header .navs-ng ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main header .navs-ng ul li {
+  font-size: 0.62em;
+  margin: 0 0 0 1.5em;
+  font-family: Falling;
+  font-family: "Source Sans Pro", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main header .navs-ng ul li svg {
+  width: 0.9em;
+}
+
+main header .navs-ng ul li.backend a {
+  color: #ed2837;
+}
+
+main header .navs-ng ul li .icon {
+  position: relative;
+  margin: 0 0.5em;
+}
+
+main header .navs-ng ul li a {
+  text-decoration: none;
+  color: #727375;
+}
+
+main section {
+  position: relative;
+  width: 95%;
+  padding: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main section .title {
+  font-size: 0.7em;
+  font-family: Falling;
+  margin-left: 1.3em;
+  color: #727375;
+  width: calc(100% - 1.3em);
+}
+/*# sourceMappingURL=header-ini.css.map */

@@ -1,0 +1,334 @@
+main .alert {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.6em;
+  margin: 2em 0 0;
+  padding: 0.8em 0.5em;
+  border: 1px solid;
+  border-radius: 3px;
+  -webkit-transition: 0.5s opacity, 0.3s -webkit-transform;
+  transition: 0.5s opacity, 0.3s -webkit-transform;
+  transition: 0.5s opacity, 0.3s transform;
+  transition: 0.5s opacity, 0.3s transform, 0.3s -webkit-transform;
+}
+
+main .alert i {
+  margin: 0 0.5em 0 1em;
+  cursor: pointer;
+  -webkit-transform: translateY(0.09em);
+          transform: translateY(0.09em);
+}
+
+main .alert .msg {
+  margin: 0 1em;
+  font-family: Falling;
+}
+
+main .alert.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+main .alert.success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+main .alert.hidden {
+  opacity: 0;
+  -webkit-transform: translateY(-10em);
+          transform: translateY(-10em);
+}
+
+main section {
+  position: relative;
+  width: 95%;
+}
+
+main section .title {
+  font-size: 0.7em;
+  font-family: Falling;
+  margin-left: 1.3em;
+  color: #727375;
+  width: calc(100% - 1.3em);
+}
+
+main section#dashboard {
+  margin-top: 2em;
+  padding: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main section#dashboard .container-dashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 1em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main section#dashboard .container-dashboard .card-ov {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.05);
+  margin: 0 0.8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1em 2em;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+main section#dashboard .container-dashboard .card-ov .icon {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #7273752f;
+  margin: 0em 0 0.5em 0;
+}
+
+main section#dashboard .container-dashboard .card-ov .icon svg {
+  width: 0.9em;
+  height: 0.9em;
+  fill: #727375;
+}
+
+main section#dashboard .container-dashboard .card-ov .icon svg.s10 {
+  width: 0.8em;
+  height: 0.8em;
+}
+
+main section#dashboard .container-dashboard .card-ov .number {
+  font-size: 2.3em;
+  font-family: Falling;
+  font-weight: bold;
+}
+
+main section#dashboard .container-dashboard .card-ov .total {
+  font-size: 0.6em;
+  color: #727375;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+main section#dashboard .container-dashboard .card-ov:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+main section#dahboard-description {
+  margin-top: 1em;
+}
+
+main section#dahboard-description .container-description {
+  width: 100%;
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main section#dahboard-description .container-description .card-desc-ui {
+  width: calc(100% / 3);
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.05);
+  height: 12em;
+  margin: 0 0.8em;
+}
+
+main section#dahboard-description .container-description .card-desc-ui .top-sec {
+  border-bottom: 1px solid #7273752f;
+  padding: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main section#dahboard-description .container-description .card-desc-ui .top-sec .text {
+  font-size: 0.6em;
+  font-family: "Source Sans Pro", sans-serif;
+  text-transform: capitalize;
+}
+
+main section#dahboard-description .container-description .card-desc-ui .top-sec .icon {
+  width: 1em;
+  height: 1em;
+}
+
+main section#dahboard-description .container-description .card-desc-ui .top-sec .icon svg {
+  width: 0.9em;
+  height: 0.9em;
+  fill: #727375;
+}
+
+main section#dahboard-description .container-description .card-desc-ui .top-sec .icon svg.s10 {
+  width: 0.75em;
+  height: 0.75em;
+}
+
+main section#dahboard-description .container-description .card-desc-ui ul {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: auto !important;
+  height: 10em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main section#dahboard-description .container-description .card-desc-ui ul .title-x {
+  font-size: 0.6em;
+  margin: 0.2em 0 0 0 !important;
+  width: calc(100% - 1.8em);
+  padding: 0.5em 0.9em;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+}
+
+main section#dahboard-description .container-description .card-desc-ui ul li {
+  width: calc(100% - 1.8em);
+  font-size: 0.55em;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  padding: 0.5em 0.9em;
+  margin: 0.5em 0 1em 0;
+  color: #727375;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main section#dahboard-description .container-description .card-desc-ui ul li strong {
+  margin-top: 0.7em;
+  color: #ed2837;
+  font-size: 0.8em;
+}
+
+main section#dahboard-description .container-description .card-desc-ui ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main section#dahboard-description .container-description .card-desc-ui ul li a:hover {
+  text-decoration: underline;
+  color: initial;
+}
+
+main section#dahboard-description .container-description .card-desc-ui ul ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(100% - 2em);
+  margin: 0.5em;
+  padding: 0 !important;
+}
+
+main section#dahboard-description .container-description .card-desc-ui ul ol span {
+  font-size: 0.55em;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+  color: #727375;
+}
+
+main section#dahboard-description .container-description .card-desc-ui ul ol img {
+  width: 3em;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #72737563;
+  -webkit-transition: 1s all;
+  transition: 1s all;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #727375;
+  -webkit-transition: 1s all;
+  transition: 1s all;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffff;
+}
+/*# sourceMappingURL=acceuil.css.map */

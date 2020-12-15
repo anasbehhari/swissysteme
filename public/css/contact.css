@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap");
+.contact-us {
+  font-size: 0.9em;
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact-us .lef-col-cont {
+  position: relative;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact-us .lef-col-cont .contact-title {
+  font-size: 2.5em;
+  color: #ed2232;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+}
+
+.contact-us .lef-col-cont .contact-desc {
+  font-size: 1.3em;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-top: 0.5em;
+  font-weight: 100;
+}
+
+.contact-us .rig-col-cont {
+  height: 100%;
+  width: 50%;
+  background-image: url(../media/contactez.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+.contact-us-cords {
+  font-size: 0.9em;
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 30% 30%;
+      grid-template-columns: 30% 30% 30%;
+  padding: 2em 0;
+  margin-top: 3em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-us-cords .cord {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-us-cords .cord i {
+  font-size: 1.7em;
+  margin: 0 0.5em;
+  color: #ed2232;
+}
+
+.contact-us-cords .cord .data {
+  font-size: 1.4em;
+}
+
+.contact-us-cords .cord .data .title-data {
+  font-size: 1em;
+  font-family: Falling;
+}
+
+.contact-us-cords .cord .data .data-text {
+  margin-top: 0.5em;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.85em;
+}
+
+.form-contact-us {
+  font-size: 0.9em;
+  position: relative;
+  width: calc(1000px - 4em);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 16px -4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 16px -4px rgba(0, 0, 0, 0.1);
+  padding: 0.2em 2em;
+  margin: 2em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form-contact-us form {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.form-contact-us form button {
+  font-size: 1.3em;
+  padding: .8em 5em;
+  margin: 1em 0;
+  background-color: #ed2232;
+  color: #fff;
+  font-family: Falling;
+  border: none;
+  border-radius: 4    px;
+}
+
+.form-contact-us form .top-section {
+  margin-top: 3em;
+}
+
+.form-contact-us form .top-section .title-form {
+  font-size: 1.8em;
+  color: #ed2232;
+  font-family: "Source Sans Pro", sans-serif;
+  text-transform: uppercase;
+  color: #1b1b1b;
+}
+
+.form-contact-us form .top-section .msg-form {
+  font-size: 1.3em;
+  margin: 0.7em 0 3em 0;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 100;
+  color: #ed2232;
+}
+
+.form-contact-us form .inputs-cli {
+  position: relative;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 45% 45%;
+      grid-template-columns: 45% 45%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 500px;
+  margin-bottom: 2em;
+}
+
+.form-contact-us form .inputs-cli .input-container {
+  position: relative;
+  width: calc(100% - 1em);
+  margin: 0 0.5em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 25% 25% 25% 25%;
+      grid-template-rows: 25% 25% 25% 25%;
+}
+
+.form-contact-us form .inputs-cli .input-container.second {
+  -ms-grid-rows: 25% 25% 50% !important;
+      grid-template-rows: 25% 25% 50% !important;
+}
+
+.form-contact-us form .inputs-cli .input-container .input-cli {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form-contact-us form .inputs-cli .input-container .input-cli.selected {
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+}
+
+.form-contact-us form .inputs-cli .input-container .input-cli input {
+  display: block !important;
+  position: relative;
+  width: calc(100% - 0.5em);
+  padding-left: 0.5em;
+  height: 40%;
+  font-size: 1.2em;
+  font-family: "Source Sans Pro", sans-serif;
+  border: 1px solid #dfdede;
+  outline: none;
+}
+
+.form-contact-us form .inputs-cli .input-container .input-cli select {
+  width: calc(100% - 0.5em);
+  padding-left: 0.5em;
+  font-size: 1.2em;
+  height: 40%;
+  border: 1px solid #dfdede;
+  outline: none;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.form-contact-us form .inputs-cli .input-container .input-cli select option {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.form-contact-us form .inputs-cli .input-container .input-cli textarea {
+  position: relative;
+  font-size: 1.2em;
+  width: calc(100% - 0.5em);
+  font-family: "Source Sans Pro", sans-serif;
+  padding-left: 0.5em;
+  padding-top: 0.6em;
+  height: calc(100% - 1em);
+  max-width: calc(100% - 0.5em) !important;
+  max-height: calc(100% - 1em) !important;
+  border: 1px solid #dfdede;
+  outline: none;
+}
+
+@media all and (max-width: 1000px) {
+  .contact-us div.lef-col-cont {
+    position: absolute;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .contact-us div.lef-col-cont .container-contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.685);
+    padding: 1.5em 0.5em;
+    margin: 0 1em;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 0.9em;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact-us div.rig-col-cont {
+    width: 100%;
+  }
+  .contact-us-cords {
+    font-size: 0.85em;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    margin: 0 !important;
+  }
+  .contact-us-cords .cord {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin: 1.5em 0;
+  }
+  .contact-us-cords .cord i {
+    font-size: 1.5em;
+    margin: 0 0.5em;
+    color: #ed2232;
+  }
+  .contact-us-cords .cord .data .title-data {
+    -webkit-transform: translateY(-0.2em);
+            transform: translateY(-0.2em);
+  }
+  .contact-us-cords .cord .data .data-text {
+    margin-top: 0.3em;
+  }
+  button {
+    width: 100%;
+    border-radius: 5px;
+  }
+  .form-contact-us {
+    width: calc(100% - 1.5em);
+    font-size: 0.8em;
+  }
+  .form-contact-us .inputs-cli {
+    -ms-grid-columns: 100% !important;
+        grid-template-columns: 100% !important;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+  }
+  .form-contact-us .inputs-cli.selected {
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+  }
+  .form-contact-us .inputs-cli input {
+    margin: 1em 0 !important;
+  }
+  .form-contact-us .inputs-cli input,
+  .form-contact-us .inputs-cli select {
+    height: 4em !important;
+  }
+  .form-contact-us .inputs-cli textarea {
+    height: 300px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-top: 1em;
+  }
+}
+/*# sourceMappingURL=contact.css.map */

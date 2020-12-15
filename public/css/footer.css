@@ -1,0 +1,135 @@
+footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 3em 0;
+  background-color: #f2f2f5;
+  color: #1b1b1b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 0.8em;
+}
+
+footer .container {
+  position: relative;
+  width: 95%;
+}
+
+footer .container .row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 25% 25% 25%;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+footer .container .row .col {
+  position: relative;
+  margin-top: 2em;
+  font-family: Falling;
+}
+
+footer .container .row .col .logo {
+  width: 7em;
+  margin-bottom: 1em;
+}
+
+footer .container .row .col .logo img {
+  width: 100%;
+}
+
+footer .container .row .col .titre {
+  font-size: 1.3em;
+  margin-bottom: 1em;
+  text-transform: capitalize;
+}
+
+footer .container .row .col ul {
+  list-style: none;
+}
+
+footer .container .row .col ul.last li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+footer .container .row .col ul li {
+  margin-bottom: 1.5em;
+  font-family: Arial;
+}
+
+footer .container .row .col ul li strong {
+  margin: 0 1em 0 0;
+}
+
+footer .container .row .col ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer .container .row .col ul li a i {
+  margin: 0 1em 0 0;
+}
+
+footer .container .line {
+  position: relative;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.288);
+  height: 0.1em;
+  margin: 1em 0;
+}
+
+footer .container .copy {
+  margin: 2em 0 1em 0;
+  text-align: center;
+  font-family: Arial;
+  font-size: 0.9em;
+}
+
+@media (max-width: 900px) {
+  footer .container {
+    width: 95%;
+    font-size: 1.1em;
+  }
+  footer .container .row {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 100% !important;
+    grid-template-columns: 100% !important;
+  }
+  footer .container .row .col {
+    position: relative;
+    margin-top: 2em;
+    font-family: Falling;
+  }
+  footer .container .row .col .logo {
+    width: 9em;
+    margin-bottom: 1em;
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  footer .container .row .col .logo img {
+    width: 100%;
+  }
+  footer .container .row .col .text {
+    font-size: 1.2em;
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=footer.css.map */

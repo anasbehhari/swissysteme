@@ -1,0 +1,138 @@
+@font-face {
+    src: url(../../fonts/Falling.otf);
+    font-family: Falling;
+}
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    background-color: #f5f5f5;
+    font-size: calc(1em + 0.65vw);
+    nav {
+        position: absolute;
+        left: 0;
+        height: calc(100% - 0.6em);
+        width: calc(6em);
+        background-color: #fff;
+        overflow: hidden auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 0.5em;
+        margin: 0.6em 1em 0 1em;
+        box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.05);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        header {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.6em;
+            div {
+                &.logo {
+                    width: 6rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img {
+                        width: 95%;
+                        fill: #7a939e;
+                        path.cgt {
+                            fill: #d1c4e9;
+                        }
+                    }
+                }
+                &.ico {
+                    width: 1em;
+                    height: 1em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    svg {
+                        width: 0.8em;
+                        height: 0.8em;
+                        fill: #727375;
+                    }
+                }
+            }
+        }
+        div.navs {
+            position: relative;
+            margin-top: 3em;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .nav-link {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #fff;
+                box-shadow: 0;
+                padding: 0.5em;
+                border-radius: 0.3em;
+                margin: 0.5em 0;
+                width: 42%;
+                transition: 0.4s background-color, 0.4s box-shadow;
+                font-size: 0.9em;
+                &.active {
+                    box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.2);
+                    background-color: #fff;
+                    a {
+                        svg {
+                            fill: #ed2837;
+                        }
+                        span {
+                            color: #ed2837;
+                        }
+                    }
+                }
+                &:hover {
+                    box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.2);
+                }
+                a {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    font-size: 0.5em;
+                    color: inherit;
+                    font-family: Falling;
+                    .nm {
+                        position: absolute;
+                        width: 0.5em;
+                        height: 0.5em;
+                        border-radius: 50%;
+                        background-color: #ed2837;
+                        top: 0;
+                        left: 79%;
+                        transform: translateX(-100%);
+                    }
+                    svg {
+                        height: 1.9em;
+                        width: 1.9em;
+                        fill: #727375;
+                        &.s19 {
+                            width: 2.2em;
+                            height: 2.2em;
+                        }
+                    }
+                    span {
+                        margin-top: 0.7em;
+                        color: #727375;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+    }
+}

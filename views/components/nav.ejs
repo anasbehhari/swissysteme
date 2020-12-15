@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap">
+<nav>
+    <div class="logo">
+        <img src="media/logo.png" alt="">
+    </div>
+    <label for="btn" class="icon">
+        <span class="fa fa-bars"></span>
+    </label>
+    <input type="checkbox" id="btn">
+    <ul>
+        <li><a class="<%= acceuil %>" href="/">Acceuil</a></li>
+        <li>
+            <label for="btn-1" class="show">A propos +</label>
+            <a>A propos</a>
+            <input type="checkbox" id="btn-1">
+            <ul class="fixed-ul">
+                <li><a href="#our-engagment">Notre engagment</a></li>
+                <li><a href="#activite">Nos activités </a></li>
+                <li><a href="#partenaire">Nos partenaires</a></li>
+                <li><a href="#our-services">Nos services</a></li>
+
+            </ul>
+        </li>
+        <li>
+            <label for="btn-2" class="show">Produits</label>
+            <a href="" class="<%= produits %>">Produits</a>
+            <input type="checkbox" id="btn-2">
+            <ul class="fixed-ul">
+                <li><a href="#">Photovoltaïque</a></li>
+                <li><a href="#">Electricité</a></li>
+                <li><a href="#">Climatisation</a></li>
+                <!--<li>
+                    <label for="btn-3" class="show">More +</label>
+                    <a href="#">More <span class="fa fa-plus"></span></a>
+                    <input type="checkbox" id="btn-3">
+                    <ul>
+                        <li><a href="#">Submenu-1</a></li>
+                        <li><a href="#">Submenu-2</a></li>
+                        <li><a href="#">Submenu-3</a></li>
+                    </ul>
+                </li>-->
+            </ul>
+        </li>
+        <li><a href="/catalogue" class="<%= catalogue %>">Catalogue</a></li>
+        <li><a href="/contact" class="<%= contact %>">Contact</a></li>
+    </ul>
+
+</nav>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include("components/loader.ejs") %>
+    <%- include("components/nav.ejs",{acceuil:"",produits:"",catalogue:"",contact:"active"}) %>
+    <div class="contact-us">
+        <div class="lef-col-cont">
+            <div class="container-contact">
+                <div class="contact-title">CONTACTEZ-NOUS</div>
+                <div class="contact-desc">Nʼhésitez pas à nous contacter pour plus dʼinformations</div>
+            </div>
+        </div>
+        <div class="rig-col-cont"></div>
+    </div>
+    <div class="contact-us-cords">
+        <div class="cord">
+            <i class="fa fa-map-marker " aria-hidden="true"></i>
+            <div class="data">
+                <div class="title-data">Localisation</div>
+                <div class="data-text">N°4,2éme Etage Av el Amir Abd <br> Elkader N°78 Cité
+                    Almassira -Agadir</div>
+            </div>
+        </div>
+        <div class="cord">
+            <i class="fa fa-phone " aria-hidden="true"></i>
+            <div class="data">
+                <div class="title-data">Téléphone</div>
+                <div class="data-text">0528 23 23 29</div>
+            </div>
+        </div>
+        <div class="cord">
+            <i class="far fa-clock" aria-hidden="true"></i>
+            <div class="data">
+                <div class="title-data">Nos horaires</div>
+                <div class="data-text">Du lundi au jeudi de 8h30 à 18h30 <br> Vendredi de 8h30 à 17h30</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-contact-us">
+        <form action="">
+            <div class="top-section">
+                <div class="title-form">Contactez-nous</div>
+                <div class="msg-form">Merci de bien vouloir remplir ce formulaire afin de nous faire part de vos
+                    demandes.</div>
+            </div>
+            <div class="inputs-cli">
+                <div class="input-container">
+                    <div class="input-cli">
+                        <input type="text" placeholder="Societe">
+
+                    </div>
+                    <div class="input-cli">
+                        <input type="text" placeholder="Nom">
+                    </div>
+                    <div class="input-cli">
+                        <input type="text" placeholder="Prenom">
+
+                    </div>
+                    <div class="input-cli">
+                        <input type="text" placeholder="Courriel">
+
+                    </div>
+
+                </div>
+                <div class="input-container second">
+                    <div class="input-cli ">
+                        <select name="" id="">
+                            <option value="-1" hidden>Je suis intéressé(e) par</option>
+                            <option value="">option 1</option>
+                            <option value="">option 2</option>
+                            <option value="">option 3</option>
+
+                        </select>
+                    </div>
+                    <div class="input-cli ">
+                        <select name="" id="">
+                            <option value="-1" hidden>Comment nous avez-vous connus ?</option>
+                            <option value="">Moteur de recherche</option>
+                            <option value="">Bouche à oreille</option>
+                            <option value="">Publicité papier</option>
+                            <option value="">Presse</option>
+
+                        </select>
+                    </div>
+                    <div class="input-cli">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                    </div>
+                </div>
+            </div>
+                <button>Envoyer </button>
+        </form>
+    </div>
+    <%- include('components/footer.ejs') %>
+   <script>
+       if(window.innerWidth < 900) {
+           document.querySelectorAll(".second .input-cli").forEach(el =>{
+               el.classList.add("selected")
+           })
+       }
+   </script>
+    <script src="javascript/nav.js"></script>
+    <script src="javascript/loader.js"></script>
+</body>
+
+</html>
