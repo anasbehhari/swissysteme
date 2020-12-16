@@ -315,5 +315,8 @@ router.post("/marques",upload.single("marqPic"),function (req,res) {
 
 })
 
+router.get("/commandes",(req,res)=>{
+    res.render("admin/commandes")
+})
 
 module.exports = router;
