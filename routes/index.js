@@ -60,7 +60,7 @@ router.post("/contact",(req,res) => {
                 howf = "";
                 break;
         }
-        const NewContactForm = new ContactForm({ companyName: data.companyName,fullName: data.firstname + " " + data.lastname,email: data.email,howFind: howf,interest: int,message: data.message,date: moment().calendar()})
+        const NewContactForm = new ContactForm({ companyName: data.companyName,fullName: data.firstname + " " + data.lastname,email: data.email,howFind: howf,interest: int,message: data.message,date: moment().format("lll")})
 
         NewContactForm.save()
             .then(contactForm => {

@@ -64,18 +64,20 @@
             }
             .bt-sc {
                 display: flex;
-                justify-content: space-between;
                 width: calc(100% - 1em);
                 align-items: center;
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
                 margin-top: 1em;
+                
                 .c-bt {
+                    width: 50%;
                     position: relative;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    justify-content: flex-start;
 
                     input {
                         display: none;
@@ -103,9 +105,14 @@
                         font-size: 0.5em;
                         padding: 0 !important;
                         margin-bottom: 0.1em;
+                        cursor: pointer;
+                        outline: none;
+                        &.fav i{
+                            color: #f5a91e;
+                        }
                         i {
                             font-size: 1.2em;
-                            color: #f5a91e;
+                            color: #dddedf;
                         }
                     }
                     input[type="checkbox"]:checked + label i {
@@ -116,6 +123,10 @@
                     font-family: "Source Sans Pro", sans-serif;
                     font-size: 0.5em;
                     color: #bcbdbe;
+                    width: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
                 }
             }
         }

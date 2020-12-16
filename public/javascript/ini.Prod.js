@@ -22,7 +22,7 @@ const brands = document.getElementById("proMarq");
 const products = document.getElementById("productsIN");
 
 if(cats && brands) {
-    fetch("../api/brands/",{
+    fetch("/api/brands/",{
         method:"GET",
     })
     .then(res=> res.json())
@@ -37,7 +37,7 @@ if(cats && brands) {
 
 
     setTimeout(()=>{
-     fetch("../api/cats",{
+     fetch("/api/cats",{
          method:"GET"
      })
      .then(res=> res.json())
@@ -49,7 +49,7 @@ if(cats && brands) {
     },0)
 }
 if(products){
-    fetch("../api/products",{
+    fetch("/api/products",{
         method:"GET",
     })
     .then(res => res.json())

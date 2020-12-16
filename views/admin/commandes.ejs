@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/admin/loader.css">
-    <link rel="stylesheet" href="../css/admin/ini.css">
-    <link rel="stylesheet" href="../css/admin/inbox.css">
+    <link rel="stylesheet" href="/css/admin/loader.css">
+    <link rel="stylesheet" href="/css/admin/ini.css">
+    <link rel="stylesheet" href="/css/admin/inbox.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>commandes</title>
 </head>
@@ -31,11 +31,11 @@
                         <% } %>
 
                             <div class="inbox-sec">
-                                <div class="messages">
+                                <div class="messages" >
 
                                     <% if (typeof data !="undefined" ) { %>
                                         <% data.forEach(el=> { %>
-                                            <div class="message">
+                                            <div class="message" id="<%= el._id %>">
                                                 <a href="/admin/commandes/<%= el._id %> ">
                                                     <div class="top-sec">
                                                         <div class="icon"><img
@@ -53,7 +53,7 @@
                                                 <div class="c-bt">
                                                     <input id="checkbox" type="checkbox" name="checkbox" />
 
-                                                    <button><i class="fa fa-star"></i></button>
+                                                    <button class="btn"><i class="fa fa-star"></i></button>
                                                 </div>
                                                 <div class="dateTime">
                                                     <%= el.date  %>
@@ -72,8 +72,9 @@
                             </div>
                             </div>
             </main>
-            <script src="../javascript/closebtn.js"></script>
-            <script src="../javascript/loader.js"></script>
+            <script src="/javascript/closebtn.js"></script>
+            <script src="/javascript/loader.js"></script>
+            <script src="/javascript/btn_78handl.er.js"></script>
 
 </body>
 
