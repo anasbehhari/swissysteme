@@ -3,7 +3,6 @@
   width: 95%;
   height: 85%;
   max-height: 85%;
-  overflow-y: auto;
   margin-top: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15,13 +14,175 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow-y: auto;
 }
 
 .inbox-sec .messages {
   position: relative;
   width: 25%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.inbox-sec .messages .message {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   background-color: #fff;
+  -webkit-box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.08);
+  padding: 0.5em 0;
+  margin-bottom: 1em;
+  -webkit-transition: .2s transform;
+  transition: .2s transform;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-backface-visibility: hidden !important;
+          backface-visibility: hidden !important;
+  border-radius: 3px;
+}
+
+.inbox-sec .messages .message:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.2);
+}
+
+.inbox-sec .messages .message a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.inbox-sec .messages .message .top-sec {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.9em;
+}
+
+.inbox-sec .messages .message .top-sec .icon {
+  width: 1.3em;
+  height: 1.3em;
+  margin: 0 0.5em;
+}
+
+.inbox-sec .messages .message .top-sec .icon img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.inbox-sec .messages .message .top-sec .name {
+  font-size: 0.55em;
+  color: #727375;
+  font-family: Falling;
+}
+
+.inbox-sec .messages .message .min-msg {
+  font-size: 0.6em;
+  padding: 0 0.5em 0 1em;
+  margin-top: 1em;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.inbox-sec .messages .message .bt-sc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(100% - 1em);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 1em;
+}
+
+.inbox-sec .messages .message .bt-sc .c-bt {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.inbox-sec .messages .message .bt-sc .c-bt input {
+  display: none;
+}
+
+.inbox-sec .messages .message .bt-sc .c-bt label {
+  width: 0.6em;
+  height: 0.6em;
+  background-color: #f4f5f9;
+  border: 1px solid #eaebef;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 0.5em;
+}
+
+.inbox-sec .messages .message .bt-sc .c-bt label i {
+  font-size: 0.35em;
+  color: gray;
+  -webkit-transition: 0.3s -webkit-transform;
+  transition: 0.3s -webkit-transform;
+  transition: 0.3s transform;
+  transition: 0.3s transform, 0.3s -webkit-transform;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.inbox-sec .messages .message .bt-sc .c-bt button {
+  background-color: transparent;
+  border: none;
+  font-size: 0.5em;
+  padding: 0 !important;
+  margin-bottom: 0.1em;
+}
+
+.inbox-sec .messages .message .bt-sc .c-bt button i {
+  font-size: 1.2em;
+  color: #f5a91e;
+}
+
+.inbox-sec .messages .message .bt-sc .c-bt input[type="checkbox"]:checked + label i {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.inbox-sec .messages .message .bt-sc .dateTime {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.5em;
+  color: #bcbdbe;
 }
 
 .inbox-sec .display-message {
