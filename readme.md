@@ -1,6 +1,5 @@
 # swissysteme 
 
-a website for eco 
 
 ## Installation
 
