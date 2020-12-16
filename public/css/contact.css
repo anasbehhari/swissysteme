@@ -173,7 +173,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-          background-image: url(../media/back.jpg);
+          /*background-image: url(../media/back.jpg);*/
           background-size: cover;
           background-position: center center;
           z-index: 4;
