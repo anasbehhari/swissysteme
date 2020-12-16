@@ -1,0 +1,63 @@
+section{
+    margin-top: 5em;
+    width: 100%;
+}
+section .nav-bar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section .nav-bar i{
+    font-size: 4em;
+    margin: 1em;
+    color:  #eeeeee;
+}
+section .nav-bar h2{
+    font-family: Falling;
+    font-size: 2em;
+    color: rgb(147, 144, 144);
+    font-weight: 400;
+    text-align: center;
+}
+section .cnt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 4;
+    margin-top: 2em;
+}
+section .cnt .colum{
+    width: 100%;
+    max-width: 400px;
+    height: 350px;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+section .cnt .colum .image{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section .cnt .colum .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+section .cnt .colum .brand-name{
+    font-family: Falling;
+    margin-top: .6em;
+    font-size: 1.1em;
+}
+
+

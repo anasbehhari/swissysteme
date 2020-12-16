@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/welcome.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/brands.css">
+    <link rel="stylesheet" href="css/card.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <%- include('components/loader.ejs') %>
+        <%- include('components/nav.ejs',{acceuil:"",produits:"active",catalogue:"",contact:""}) %>
+            <section>
+                <div class="nav-bar">
+                    <i class="fas fa-code-branch"></i>
+                    <h2>Les Marques</h2>
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <div class="cnt">
+                    <div class="colum">
+                        <div class="image">
+                            <img src="media/Emblème-LG.jpg" alt="">
+                        </div>
+                        <div class="brand-name">LG Brand</div>
+                    </div>
+                    <div class="colum">
+                        <div class="image">
+                            <img src="media/Emblème-LG.jpg" alt="">
+                        </div>
+                        <div class="brand-name">LG Brand</div>
+                    </div>
+                    <div class="colum">
+                        <div class="image">
+                            <img src="media/Emblème-LG.jpg" alt="">
+                        </div>
+                        <div class="brand-name">LG Brand</div>
+                    </div>
+                    <div class="colum">
+                        <div class="image">
+                            <img src="media/Emblème-LG.jpg" alt="">
+                        </div>
+                        <div class="brand-name">LG Brand</div>
+                    </div>
+                </div>
+            </section>
+
+            <%- include('components/footer.ejs') %>
+
+            <script src="javascript/loader.js"></script>
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+            <script src="javascript/swiper.js"></script>
+            <script src="javascript/nav.js"></script>
+            <script src="javascript/particles.js"></script>
+            <script src="javascript/setup.js"></script>
+
+
+</body>
+
+
+</html>
