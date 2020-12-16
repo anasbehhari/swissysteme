@@ -1,4 +1,41 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap");
+.alert {
+    position: relative;
+    display: flex;
+    font-size: 1em;
+    margin: 2em 0 0;
+    padding: 0.8em 0.5em;
+    border: 1px solid;
+    border-radius: 3px;
+    transition: 0.5s opacity, 0.3s transform;
+    width: fit-content;
+    left: 50%;
+    transform: translate(-50%,0);
+    i {
+        margin: 0 0.5em 0 1em;
+        cursor: pointer;
+        transform: translateY(0.09em);
+    }
+    .msg {
+        margin: 0 1em;
+        font-family: Falling;
+    }
+    &.error {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+    }
+    &.success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+    }
+    &.hidden {
+        opacity: 0;
+        transform: translate(-50%,-10em);
+    }
+}
 .contact-us {
     font-size: 0.9em;
     position: relative;
