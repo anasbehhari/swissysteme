@@ -1,4 +1,56 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap");
+.alert {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1em;
+  margin: 2em 0 0;
+  padding: 0.8em 0.5em;
+  border: 1px solid;
+  border-radius: 3px;
+  -webkit-transition: 0.5s opacity, 0.3s -webkit-transform;
+  transition: 0.5s opacity, 0.3s -webkit-transform;
+  transition: 0.5s opacity, 0.3s transform;
+  transition: 0.5s opacity, 0.3s transform, 0.3s -webkit-transform;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.alert i {
+  margin: 0 0.5em 0 1em;
+  cursor: pointer;
+  -webkit-transform: translateY(0.09em);
+          transform: translateY(0.09em);
+}
+
+.alert .msg {
+  margin: 0 1em;
+  font-family: Falling;
+}
+
+.alert.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert.success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert.hidden {
+  opacity: 0;
+  -webkit-transform: translate(-50%, -10em);
+          transform: translate(-50%, -10em);
+}
+
 .contact-us {
   font-size: 0.9em;
   position: relative;

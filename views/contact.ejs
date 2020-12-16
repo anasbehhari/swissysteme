@@ -49,8 +49,18 @@
             </div>
         </div>
     </div>
+    <% if ( typeof msg !='undefined' ) { %>
+        <div class="alert <%= type %>">
+            <div class="msg">
+                <%= msg %>
+            </div>
+            <div class="close-btn">
+                <i class="fa fa-times"></i>
+            </div>
+        </div>
+        <% } %>
     <div class="form-contact-us">
-        <form action="">
+        <form action="/contact" method="POST">
             <div class="top-section">
                 <div class="title-form">Contactez-nous</div>
                 <div class="msg-form">Merci de bien vouloir remplir ce formulaire afin de nous faire part de vos
@@ -59,44 +69,45 @@
             <div class="inputs-cli">
                 <div class="input-container">
                     <div class="input-cli">
-                        <input type="text" placeholder="Societe">
+                        <input required type="text" name="companyName" placeholder="Societe">
 
                     </div>
                     <div class="input-cli">
-                        <input type="text" placeholder="Nom">
+                        <input required type="text" name="firstname" placeholder="prenom">
                     </div>
                     <div class="input-cli">
-                        <input type="text" placeholder="Prenom">
+                        <input required type="text" name="lastname" placeholder="nom">
 
                     </div>
                     <div class="input-cli">
-                        <input type="text" placeholder="Courriel">
-
+                        <input required type="email" name="email"  placeholder="Courriel">
                     </div>
 
                 </div>
                 <div class="input-container second">
                     <div class="input-cli ">
-                        <select name="" id="">
+                        <select required name="interest" id="">
                             <option value="-1" hidden>Je suis intéressé(e) par</option>
-                            <option value="">option 1</option>
-                            <option value="">option 2</option>
-                            <option value="">option 3</option>
-
+                            <option value="1">collaborer avec nous </option>
+                            <option value="2">Achat de produits</option>
+                            <option value="3">installation et réparation </option>
+                            <option value="4">autre</option>
                         </select>
                     </div>
                     <div class="input-cli ">
-                        <select name="" id="">
+                        <select required name="howFind" id="">
                             <option value="-1" hidden>Comment nous avez-vous connus ?</option>
-                            <option value="">Moteur de recherche</option>
-                            <option value="">Bouche à oreille</option>
-                            <option value="">Publicité papier</option>
-                            <option value="">Presse</option>
+                            <option value="1">Moteur de recherche</option>
+                            <option value="2">Bouche à oreille</option>
+                            <option value="3">Publicité papier</option>
+                            <option value="4">Presse</option>
+                            <option value="5">autre</option>
+
 
                         </select>
                     </div>
                     <div class="input-cli">
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                        <textarea required name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
                     </div>
                 </div>
             </div>
@@ -113,6 +124,7 @@
    </script>
     <script src="javascript/nav.js"></script>
     <script src="javascript/loader.js"></script>
+    <script src="javascript/closebtn.js"></script>
 </body>
 
 </html>
