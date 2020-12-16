@@ -8,6 +8,10 @@ router.get("/catalogue",(req,res) => {
     res.render("catalogue")
 })
 
+router.get("/produits",(req,res) => {
+    res.render("produits")
+})
+
 
 
 
