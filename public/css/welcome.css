@@ -1,15 +1,20 @@
+body{
+  overflow-x: hidden;
+}
+
 .video-container {
   position: relative;
   width: 100%;
   height: 650px;
 }
+
 .video-container .video-con {
   height: 100% !important;
   z-index: 1;
 }
 .video-container .video-con::before {
   position: absolute;
-  width: 100%;
+  width: 100%; 
   height: 100%;
   background-color: #1b1b1b4b;
   top: 0;
@@ -76,8 +81,6 @@
   align-items: center;
   flex-direction: column;
   font-size: 0.9em;
-  z-index: 2;
-  margin: 1em 0;
 }
 .our-company span {
   color: #ed2232;
@@ -140,7 +143,7 @@ section.part {
   justify-content: center;
   height: 500px;
   width: 100%;
-  /*margin-bottom: 3em;*/
+  /* margin-bottom: 3em; */
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.9em;
@@ -170,6 +173,8 @@ section.part .dt-sec-grp ul {
   font-family: Falling;
   padding: 0.5em;
   font-size: 1.4em;
+  text-align: center;
+  display: block;
 }
 section.part .dt-sec-grp ul li {
   margin: 1.2em 0;
@@ -233,6 +238,7 @@ section.part2 ul li {
   border: 2px solid transparent;
   transition: 0.3s background-color;
 }
+
 section.part2 ul li:hover {
   background-color: transparent;
   border-radius: 50px;
@@ -302,9 +308,6 @@ section#activite{
   position: relative;
   width: 100%;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center ;
 }
 section#activite .text{
   display: flex;
@@ -320,25 +323,22 @@ section#activite .text{
 }
 
 section#activite .row{
-  width: 90%;
+  width: 80%;
+  margin: auto;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
 }
 section#activite .col{
   position: relative;
+  float: left;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  height: 400px;
-  margin: 1em;
+  width: 30%;
+  height: 450px;
+  padding: 10px;
+  margin-right: 2.5em;
+  box-sizing: border-box;
   transition: transform 0.6s;
   transform-style: preserve-3d;
 }
