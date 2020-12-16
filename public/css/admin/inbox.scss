@@ -3,17 +3,123 @@
     width: 95%;
     height: 85%;
     max-height: 85%;
-    overflow-y: auto;
     margin-top: 1em;
     display: flex;
     align-items: center;
     border-radius: 3px;
     justify-content: space-between;
+           overflow-y: auto;
     .messages {
         position: relative;
         width: 25%;
         height: 100%;
-        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+ 
+        .message {
+            width: 100%;
+            height: fit-content;
+            background-color: #fff;
+            box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.08);
+            padding: 0.5em 0;
+            margin-bottom: 1em;
+            transition: .2s transform;
+            transform: scale(.95);
+            backface-visibility: hidden !important;
+            border-radius: 3px;
+            &:hover {
+                transform: scale(1);
+            box-shadow: 0 0 8px -2px rgba(0, 0, 0, .2);
+
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+            .top-sec {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                font-size: 0.9em;
+                .icon {
+                    width: 1.3em;
+                    height: 1.3em;
+                    margin: 0 0.5em;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        border-radius: 10px;
+                    }
+                }
+                .name {
+                    font-size: 0.55em;
+                    color: #727375;
+                    font-family: Falling;
+                }
+            }
+            .min-msg {
+                font-size: 0.6em;
+                padding: 0 0.5em 0 1em;
+                margin-top: 1em;
+                font-family: "Source Sans Pro", sans-serif;
+            }
+            .bt-sc {
+                display: flex;
+                justify-content: space-between;
+                width: calc(100% - 1em);
+                align-items: center;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-top: 1em;
+                .c-bt {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    input {
+                        display: none;
+                    }
+                    label {
+                        width: 0.6em;
+                        height: 0.6em;
+                        background-color: #f4f5f9;
+                        border: 1px solid #eaebef;
+                        border-radius: 2px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-right: 0.5em;
+                        i {
+                            font-size: 0.35em;
+                            color: gray;
+                            transition: 0.3s transform;
+                            transform: scale(0);
+                        }
+                    }
+                    button {
+                        background-color: transparent;
+                        border: none;
+                        font-size: 0.5em;
+                        padding: 0 !important;
+                        margin-bottom: 0.1em;
+                        i {
+                            font-size: 1.2em;
+                            color: #f5a91e;
+                        }
+                    }
+                    input[type="checkbox"]:checked + label i {
+                        transform: scale(1);
+                    }
+                }
+                .dateTime {
+                    font-family: "Source Sans Pro", sans-serif;
+                    font-size: 0.5em;
+                    color: #bcbdbe;
+                }
+            }
+        }
     }
     .display-message {
         position: relative;
@@ -27,7 +133,6 @@
             width: 5em;
             height: 5em;
             transform: translateX(1.3em);
-
         }
     }
 }
