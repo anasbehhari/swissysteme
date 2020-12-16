@@ -21,6 +21,7 @@ nav {
   width: 100%;
   transition: .5s background-color , .3s transform ;
   transform: scale(1);
+  top: 0;
 
 }
 nav.moved {
