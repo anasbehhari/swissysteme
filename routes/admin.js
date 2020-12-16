@@ -319,9 +319,11 @@ router.post("/marques",upload.single("marqPic"),function (req,res) {
 
 router.get("/commandes",(req,res)=>{
     ContactForm.find({},{fullName:1,message:2,date:3,favorite:4})
-    .then(data => console.log(data))
+    .then(data => {
+        res.render("admin/commandes",{data})
+    })
     .catch(err=> console.log(err))
-    res.render("admin/commandes")
+    
 })
 
 module.exports = router;
