@@ -29,66 +29,47 @@
                             </div>
                         </div>
                         <% } %>
-                    
+
                             <div class="inbox-sec">
                                 <div class="messages">
-                                    <div class="message">
-                                        <div class="top-sec">
-                                            <div class="icon"><img src="https://ui-avatars.com/api/?background=random&name=LouisAdkins&format=svg" alt=""></div>
-                                            <div class="name">Louis Adkins</div>
-                                        </div>
-                                        <div class="min-msg">How to write better advertising copy heaidng</div>
-                                        <div class="bt-sc">
-                                            <div class="c-bt">
-                                                <input id="checkbox" type="checkbox" name="checkbox" />
-                                                
-                                                <button><i class="fa fa-star"></i></button>
-                                            </div>
-                                            <div class="dateTime">8:30 AM</div>
-                                        </div>
-                                    </div>
-                                    <div class="message">
-                                        <a href="">
-                                            <div class="top-sec">
-                                                <div class="icon"><img src="https://ui-avatars.com/api/?background=random&name=ClarenceHogan&format=svg" alt="">
-                                                </div>
-                                                <div class="name">Clarence Hogan</div>
-                                            </div>
-                                            <div class="min-msg">Old Fashioned recipe for preventing allergies and chemical</div>
-                                        </a>
-                                            <div class="bt-sc">
+
+                                    <% if (typeof data !="undefined" ) { %>
+                                        <% data.forEach(el=> { %>
+                                            <div class="message">
+                                                <a href="/admin/commandes/<%= el._id %> ">
+                                                    <div class="top-sec">
+                                                        <div class="icon"><img
+                                                                src="https://ui-avatars.com/api/?background=random&name=<%= el.fullName %>&format=svg&rounded=true"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="name">
+                                                            <%= el.fullName %>
+                                                        </div>
+                                                    </div>
+                                                    <div class="min-msg">
+                                                        <%= el.message.split(/\s+/).slice(0,16).join(" ") %>...</div>
+                                            <div class=" bt-sc">
+                                                </a>
                                                 <div class="c-bt">
-                                                   
+                                                    <input id="checkbox" type="checkbox" name="checkbox" />
+
                                                     <button><i class="fa fa-star"></i></button>
                                                 </div>
-                                                <div class="dateTime">Dec 1,2020</div>
-                                            </div>
-                                       
-                                    </div>
-                                    <div class="message">
-                                       <a href="">
-                                            <div class="top-sec">
-                                                <div class="icon"><img src="https://ui-avatars.com/api/?background=random&name=OlgaBoone&format=svg" alt="">
+                                                <div class="dateTime">
+                                                    <%= el.date  %>
                                                 </div>
-                                                <div class="name">Olga Boone</div>
                                             </div>
-                                            <div class="min-msg">How to write better advertising </div>
-                                       </a>
-                                        <div class="bt-sc">
-                                            <div class="c-bt">
-                                                <input id="checkbox" type="checkbox" name="checkbox" />
-                                                
-                                                <button><i class="fa fa-star"></i></button>
-                                            </div>
-                                            <div class="dateTime">Nov 5,2020</div>
-                                        </div>
-                                    </div>
-                                    
                                 </div>
-                                <div class="display-message">
-                                    <%- include("../components/admin/svg.ejs") %>
+                                <% }) %>
 
-                                </div>
+                                    <% } %>
+
+
+                            </div>
+                            <div class="display-message">
+                                <%- include("../components/admin/svg.ejs") %>
+
+                            </div>
                             </div>
             </main>
             <script src="../javascript/closebtn.js"></script>

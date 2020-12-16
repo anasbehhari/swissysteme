@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-
+const moment = require("moment")
 const ContactFormSchema = new mongoose.Schema({
     companyName: {
         type: String,
@@ -31,8 +31,7 @@ const ContactFormSchema = new mongoose.Schema({
         required: true 
     },
     date: {
-        type:Date,
-        default:Date.now()
+        type:String
     },
     deleted : {
         type: Boolean,

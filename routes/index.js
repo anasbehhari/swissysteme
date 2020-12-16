@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ContactForm = require("../models/ContactForm")
+const moment = require("moment");
 router.get("/",(req,res) => {
     res.render("welcome")
 })
@@ -59,7 +60,7 @@ router.post("/contact",(req,res) => {
                 howf = "";
                 break;
         }
-        const NewContactForm = new ContactForm({ companyName: data.companyName,fullName: data.firstname + " " + data.lastname,email: data.email,howFind: howf,interest: int,message:data.message, })
+        const NewContactForm = new ContactForm({ companyName: data.companyName,fullName: data.firstname + " " + data.lastname,email: data.email,howFind: howf,interest: int,message: data.message,date: moment().calendar()})
 
         NewContactForm.save()
             .then(contactForm => {
