@@ -17,6 +17,7 @@ nav {
   position: fixed;
   padding: 0.2em 0;
   z-index: 99;
+  top: 0;
   color: #565656;
   width: 100%;
   transition: .5s background-color , .3s transform ;
