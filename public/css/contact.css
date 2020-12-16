@@ -173,12 +173,25 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+          background-image: url(../media/back.jpg);
+          background-size: cover;
+          background-position: center center;
+          z-index: 4;
+}
+.form-contact-us::before {
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.612);
+  top: 0;
+  content: "";
 }
 
 .form-contact-us form {
   position: relative;
   text-align: center;
   width: 100%;
+  z-index: 8;
 }
 
 .form-contact-us form button {
@@ -194,6 +207,8 @@
 
 .form-contact-us form .top-section {
   margin-top: 3em;
+  background-color: rgba(255, 255, 255, 0.741);
+  padding: 1.5em 0.5em;
 }
 
 .form-contact-us form .top-section .title-form {
