@@ -18,7 +18,7 @@ router.get("/contact",(req,res) => {
 })
 
 router.post("/contact",(req,res) => {
-    const data = { companyName,firstname,secondname,email,interest,howFind,message } = req.body;
+    const data = { companyName,firstname,lastname,email,interest,howFind,message } = req.body;
     if (data) {
         let int;
         let howf;
@@ -59,7 +59,7 @@ router.post("/contact",(req,res) => {
                 howf = "";
                 break;
         }
-        const NewContactForm = new ContactForm({ companyName: data.companyName,fullName: data.firstname + " " + data.secondname,email: data.email,howFind: howf,interest: int,message:data.message, })
+        const NewContactForm = new ContactForm({ companyName: data.companyName,fullName: data.firstname + " " + data.lastname,email: data.email,howFind: howf,interest: int,message:data.message, })
 
         NewContactForm.save()
             .then(contactForm => {

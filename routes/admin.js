@@ -2,6 +2,8 @@ const router = require("express").Router();
 const categorie = require("../models/Categorie");
 const product = require("../models/Product");
 const brand = require("../models/Brand");
+const ContactForm = require("../models/ContactForm");
+
 const objId = require('mongodb').ObjectID;
 var multer = require('multer')
 const path = require("path");
@@ -316,6 +318,9 @@ router.post("/marques",upload.single("marqPic"),function (req,res) {
 })
 
 router.get("/commandes",(req,res)=>{
+    ContactForm.find({},{fullName:1,message:2,date:3,favorite:4})
+    .then(data => console.log(data))
+    .catch(err=> console.log(err))
     res.render("admin/commandes")
 })
 
