@@ -24,6 +24,20 @@ const ContactFormSchema = new mongoose.Schema({
     ,message: {
         type:String,
         required:true
+    },
+    favorite : {
+        type: Boolean,
+        default:false,
+        required: true 
+    },
+    date: {
+        type:Date,
+        default:Date.now()
+    },
+    deleted : {
+        type: Boolean,
+        default: false,
+        required: true 
     }
 
 })

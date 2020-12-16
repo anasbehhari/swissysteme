@@ -59,19 +59,19 @@ router.post("/contact",(req,res) => {
                 howf = "";
                 break;
         }
-        const NewContactForm = new ContactForm({ companyName: data.companyName,fullname: data.firstname + " " + data.secondname,email: data.email,howFind: howf,interest: int })
+        const NewContactForm = new ContactForm({ companyName: data.companyName,fullName: data.firstname + " " + data.secondname,email: data.email,howFind: howf,interest: int,message:data.message, })
 
         NewContactForm.save()
             .then(contactForm => {
-                res.render("contact",{ msg: "Votre ",type: "error" })
+                res.render("contact",{ msg: "votre message a été bien envoyé nous vous contacterons bientôt sur votre boîte de réception "+contactForm.email,type: "success" })
             })
             .catch(err => {
-                res.render("contact",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes ",type: "error" })
+                res.render("contact",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes1 "+err,type: "error" })
 
             })
     }
     else {
-        res.render("contact",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes ",type: "error" })
+        res.render("contact",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes2 ",type: "error" })
 
     }
 
