@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/admin/loader.css">
+    <link rel="stylesheet" href="../css/admin/ini.css">
+    <link rel="stylesheet" href="../css/admin/inbox.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>commandes</title>
 </head>
+
 <body>
-        <%- include("../components/admin/loader.ejs") %>
-        
-        <%- include("../components/admin/nav.ejs",{acceuil:"",Categories:"",produits:"",settings:"",marques:"",commandes:"active"}) %>
-        <main>
-            <%- include("../components/admin/header.ejs",{acceuil:"active",Categories:"",produits:"",settings:"",marques:"",commandes:""}) %>
-            <% if ( typeof msg !='undefined' ) { %>
-                <div class="alert <%= type %>">
-                    <div class="msg">
-                        <%= msg %>
-                    </div>
-                    <div class="close-btn">
-                        <i class="fa fa-times"></i>
-                    </div>
-                </div>
-                <% } %>
-        </main>
-<script src="../javascript/closebtn.js"></script>
-<script src="../javascript/loader.js"></script>
+    <%- include("../components/admin/loader.ejs") %>
+
+        <%- include("../components/admin/nav.ejs",{acceuil:"",Categories:"",produits:"",settings:"",marques:"",commandes:"active"})
+            %>
+            <main>
+                <%- include("../components/admin/header.ejs",{acceuil:"active",Categories:"",produits:"",settings:"",marques:"",commandes:""})
+                    %>
+                    <% if ( typeof msg !='undefined' ) { %>
+                        <div class="alert <%= type %>">
+                            <div class="msg">
+                                <%= msg %>
+                            </div>
+                            <div class="close-btn">
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                        <% } %>
+                            <div class="inbox-sec">
+                                <div class="messages">
+                                    <div class="message">
+                                        
+                                    </div>
+                                </div>
+                                <div class="display-message">
+                                    <%- include("../components/admin/svg.ejs") %>
+
+                                </div>
+                            </div>
+            </main>
+            <script src="../javascript/closebtn.js"></script>
+            <script src="../javascript/loader.js"></script>
 
 </body>
+
 </html>

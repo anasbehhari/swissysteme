@@ -1,0 +1,49 @@
+.inbox-sec {
+  position: relative;
+  width: 95%;
+  height: 85%;
+  max-height: 85%;
+  overflow-y: auto;
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 3px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.inbox-sec .messages {
+  position: relative;
+  width: 25%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.inbox-sec .display-message {
+  position: relative;
+  width: 74%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+}
+
+.inbox-sec .display-message svg {
+  width: 5em;
+  height: 5em;
+  -webkit-transform: translateX(1.3em);
+          transform: translateX(1.3em);
+}
+/*# sourceMappingURL=inbox.css.map */
