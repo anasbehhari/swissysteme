@@ -136,3 +136,58 @@ body {
         }
     }
 }
+
+@media (max-width: 800px) {
+    body nav {
+        width: calc(100%) !important;
+        z-index: 5;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: none !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 1em;
+        header {
+            width: 90%;
+            div {
+                &.logo {
+                    width: 6em;
+                }
+                &.ico {
+                    width: 2em;
+                    height: 2em;
+                    svg {
+                        width: 1.4em;
+                        height: 1.4em;
+                    }
+                }
+            }
+        }
+        div.navs {
+            width: 80%;
+            .nav-link {
+                width: fit-content;
+                padding: 1em 1.5em;
+                margin: 0.5em 0;
+                font-size: 1.2em;
+            }
+        }
+    }
+    main {
+        left: 0 !important;
+        height: 100%;
+        width: 100% !important;
+        header {
+            
+            font-size: 1.1em !important;
+            ul {
+                li:nth-child(1),li:nth-child(2){
+                display: none !important;
+                }
+            }
+        }
+    }
+}
