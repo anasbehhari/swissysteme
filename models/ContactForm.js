@@ -13,7 +13,7 @@ const ContactFormSchema = new mongoose.Schema({
         type: String,
         required:true
     }
-    ,interest : {
+    ,objet : {
         type:String,
         required:true
     }

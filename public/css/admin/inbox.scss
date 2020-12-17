@@ -70,7 +70,7 @@
                 left: 50%;
                 transform: translateX(-50%);
                 margin-top: 1em;
-                
+
                 .c-bt {
                     width: 50%;
                     position: relative;
@@ -107,7 +107,7 @@
                         margin-bottom: 0.1em;
                         cursor: pointer;
                         outline: none;
-                        &.fav i{
+                        &.fav i {
                             color: #f5a91e;
                         }
                         i {
@@ -134,7 +134,7 @@
     .display-message {
         position: relative;
         width: 69%;
-        height: 100%;
+        height: calc(100%);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -143,6 +143,79 @@
             width: 5em;
             height: 5em;
             transform: translateX(1.3em);
+        }
+        &.dis {
+            position: relative;
+            display: block;
+            width: calc(100% - 2em) !important;
+            padding: 0 1em;
+            height: auto;
+            min-height: 100%;
+            .t_sec {
+                margin-top: 1em;
+                position: relative;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                width: 100%;
+                .conl {
+                    font-size: 0.6em;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    .date {
+                        font-family: "Source Sans Pro", sans-serif;
+                        color: #c3c4c5;
+                        margin-bottom: 0.5em;
+                    }
+                    .object {
+                        font-size: 1.6em;
+                        font-family: Falling;
+                        margin: 0.3em 0;
+                    }
+                    .from,
+                    .companyName,
+                    .fullname {
+                        margin-top: 1em;
+                        font-family: "Source Sans Pro", sans-serif;
+                        font-size: 0.9em;
+                        strong {
+                            margin-right: 0.3em;
+                        }
+                    }
+                }
+
+                .conr {
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 50%;
+
+                    button {
+                        background-color: transparent;
+                        border: none;
+                        width: 2.3em;
+                        height: 2.3em;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 0 0.5em;
+                        cursor: pointer;
+                        svg {
+                            width: 90%;
+                            height: 90%;
+                        }
+                    }
+                }
+            }
+            .message {
+                font-size: 0.6em !important;
+                font-family: "Source Sans Pro", sans-serif;
+                outline: none !important;
+                div {
+                outline: none !important;
+
+                }
+            }
         }
     }
 }

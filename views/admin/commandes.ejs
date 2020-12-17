@@ -29,9 +29,9 @@
                             </div>
                         </div>
                         <% } %>
-
+                                
                             <div class="inbox-sec">
-                                <div class="messages" >
+                                <div class="messages">
 
                                     <% if (typeof data !="undefined" ) { %>
                                         <% data.forEach(el=> { %>
@@ -47,7 +47,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="min-msg">
-                                                        <%= el.message.split(/\s+/).slice(0,16).join(" ") %>...</div>
+                                                        <%= el.objet %></div>
                                             <div class=" bt-sc">
                                                 </a>
                                                 <div class="c-bt">

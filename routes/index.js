@@ -22,10 +22,9 @@ router.get("/contact",(req,res) => {
 })
 
 router.post("/contact",(req,res) => {
-    const data = { companyName,firstname,lastname,email,interest,howFind,message } = req.body;
+    const data = { companyName,firstname,lastname,email,objet,howFind,message } = req.body;
     if (data) {
         let int;
-        let howf;
         switch (data.interest) {
             case "1":
                 int = "collaborer avec nous";
@@ -43,27 +42,8 @@ router.post("/contact",(req,res) => {
                 int = "";
                 break;
         }
-        switch (data.howFind) {
-            case "1":
-                howf = "Moteur de recherche";
-                break;
-            case "2":
-                howf = "Bouche à oreille";
-                break;
-            case "3":
-                howf = "Publicité papier";
-                break;
-            case "4":
-                howf = "Presse";
-                break;
-            case "5":
-                howf = "autres";
-                break;
-            default:
-                howf = "";
-                break;
-        }
-        const NewContactForm = new ContactForm({ companyName: data.companyName,fullName: data.firstname + " " + data.lastname,email: data.email,howFind: howf,interest: int,message: data.message,date: moment().format("lll")})
+        
+        const NewContactForm = new ContactForm({ companyName: data.companyName,fullName: data.firstname + " " + data.lastname,email: data.email,objet,interest: int,message: data.message,date: moment().format("lll")})
 
         NewContactForm.save()
             .then(contactForm => {

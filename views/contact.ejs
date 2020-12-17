@@ -10,121 +10,118 @@
     <link rel="stylesheet" href="css/loader.css">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <title>Document</title>
+    <script src="https://cdn.tiny.cloud/1/f8k947uye0wms2r9p7hr673uhrfywgzio2d2j2xfbgljp1qn/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <title>Contact</title>
 </head>
 
 <body>
     <%- include("components/loader.ejs") %>
-    <%- include("components/nav.ejs",{acceuil:"",produits:"",catalogue:"",contact:"active"}) %>
-    <div class="contact-us">
-        <div class="lef-col-cont">
-            <div class="container-contact">
-                <div class="contact-title">CONTACTEZ-NOUS</div>
-                <div class="contact-desc">Nʼhésitez pas à nous contacter pour plus dʼinformations</div>
-            </div>
-        </div>
-        <div class="rig-col-cont"></div>
-    </div>
-    <div class="contact-us-cords">
-        <div class="cord">
-            <i class="fa fa-map-marker " aria-hidden="true"></i>
-            <div class="data">
-                <div class="title-data">Localisation</div>
-                <div class="data-text">N°4,2éme Etage Av el Amir Abd <br> Elkader N°78 Cité
-                    Almassira -Agadir</div>
-            </div>
-        </div>
-        <div class="cord">
-            <i class="fa fa-phone " aria-hidden="true"></i>
-            <div class="data">
-                <div class="title-data">Téléphone</div>
-                <div class="data-text">0528 23 23 29</div>
-            </div>
-        </div>
-        <div class="cord">
-            <i class="far fa-clock" aria-hidden="true"></i>
-            <div class="data">
-                <div class="title-data">Nos horaires</div>
-                <div class="data-text">Du lundi au jeudi de 8h30 à 18h30 <br> Vendredi de 8h30 à 17h30</div>
-            </div>
-        </div>
-    </div>
-    <% if ( typeof msg !='undefined' ) { %>
-        <div class="alert <%= type %>">
-            <div class="msg">
-                <%= msg %>
-            </div>
-            <div class="close-btn">
-                <i class="fa fa-times"></i>
-            </div>
-        </div>
-        <% } %>
-    <div class="form-contact-us">
-        <form action="/contact" method="POST">
-            <div class="top-section">
-                <div class="title-form">Contactez-nous</div>
-                <div class="msg-form">Merci de bien vouloir remplir ce formulaire afin de nous faire part de vos
-                    demandes.</div>
-            </div>
-            <div class="inputs-cli">
-                <div class="input-container">
-                    <div class="input-cli">
-                        <input required type="text" name="companyName" placeholder="Societe">
-
+        <%- include("components/nav.ejs",{acceuil:"",produits:"",catalogue:"",contact:"active"}) %>
+            <div class="contact-us">
+                <div class="lef-col-cont">
+                    <div class="container-contact">
+                        <div class="contact-title">CONTACTEZ-NOUS</div>
+                        <div class="contact-desc">Nʼhésitez pas à nous contacter pour plus dʼinformations</div>
                     </div>
-                    <div class="input-cli">
-                        <input required type="text" name="firstname" placeholder="prenom">
-                    </div>
-                    <div class="input-cli">
-                        <input required type="text" name="lastname" placeholder="nom">
-
-                    </div>
-                    <div class="input-cli">
-                        <input required type="email" name="email"  placeholder="Courriel">
-                    </div>
-
                 </div>
-                <div class="input-container second">
-                    <div class="input-cli ">
-                        <select required name="interest" id="">
-                            <option value="-1" hidden>Je suis intéressé(e) par</option>
-                            <option value="1">collaborer avec nous </option>
-                            <option value="2">Achat de produits</option>
-                            <option value="3">installation et réparation </option>
-                            <option value="4">autres</option>
-                        </select>
+                <div class="rig-col-cont"></div>
+            </div>
+            <div class="contact-us-cords">
+                <div class="cord">
+                    <i class="fa fa-map-marker " aria-hidden="true"></i>
+                    <div class="data">
+                        <div class="title-data">Localisation</div>
+                        <div class="data-text">N°4,2éme Etage Av el Amir Abd <br> Elkader N°78 Cité
+                            Almassira -Agadir</div>
                     </div>
-                    <div class="input-cli ">
-                        <select required name="howFind" id="">
-                            <option value="-1" hidden>Comment nous avez-vous connus ?</option>
-                            <option value="1">Moteur de recherche</option>
-                            <option value="2">Bouche à oreille</option>
-                            <option value="3">Publicité papier</option>
-                            <option value="4">Presse</option>
-                            <option value="5">autres</option>
-
-
-                        </select>
+                </div>
+                <div class="cord">
+                    <i class="fa fa-phone " aria-hidden="true"></i>
+                    <div class="data">
+                        <div class="title-data">Téléphone</div>
+                        <div class="data-text">0528 23 23 29</div>
                     </div>
-                    <div class="input-cli">
-                        <textarea required name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                </div>
+                <div class="cord">
+                    <i class="far fa-clock" aria-hidden="true"></i>
+                    <div class="data">
+                        <div class="title-data">Nos horaires</div>
+                        <div class="data-text">Du lundi au jeudi de 8h30 à 18h30 <br> Vendredi de 8h30 à 17h30</div>
                     </div>
                 </div>
             </div>
-                <button>Envoyer </button>
-        </form>
-    </div>
-    <%- include('components/footer.ejs') %>
-   <script>
-       if(window.innerWidth < 900) {
-           document.querySelectorAll(".second .input-cli").forEach(el =>{
-               el.classList.add("selected")
-           })
-       }
-   </script>
-    <script src="javascript/nav.js"></script>
-    <script src="javascript/loader.js"></script>
-    <script src="javascript/closebtn.js"></script>
+            <% if ( typeof msg !='undefined' ) { %>
+                <div class="alert <%= type %>">
+                    <div class="msg">
+                        <%= msg %>
+                    </div>
+                    <div class="close-btn">
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <% } %>
+                    <div class="form-contact-us">
+                        <form action="/contact" method="POST">
+                            <div class="top-section">
+                                <div class="title-form">Contactez-nous</div>
+                                <div class="msg-form">Merci de bien vouloir remplir ce formulaire afin de nous faire
+                                    part de vos
+                                    demandes.</div>
+                            </div>
+                            <div class="con12">
+                                <div class="conIn">
+                                    <input required type="text" name="firstname" placeholder="prenom">
+
+                                    <input required type="text" name="lastname" placeholder="nom">
+                                </div>
+                                <div class="conIn">
+                                    <input required type="text" name="companyName" placeholder="Societe">
+                                    <input required type="email" name="email" placeholder="Courriel">
+
+                                </div>
+
+                                <div class="conIn">
+                                    <input type="text" name="objet" id="objet" placeholder="votre objet">
+
+                                    <select required name="howFind" id="">
+                                        <option value="-1" hidden>Comment nous avez-vous connus ?</option>
+                                        <option value="1">Moteur de recherche</option>
+                                        <option value="2">Bouche à oreille</option>
+                                        <option value="3">Publicité papier</option>
+                                        <option value="4">Presse</option>
+                                        <option value="5">autres</option>
+                                    </select>
+
+
+                                </div>
+                                <textarea contenteditable="true" required name="message" id="editor" cols="30" rows="10"
+                                    placeholder="Message"></textarea>
+                            </div>
+                            <button name="submit" type="submit">Envoyer</button>
+                        </form>
+                    </div>
+                    <%- include('components/footer.ejs') %>
+                        <script>
+                           tinymce.init({
+                                selector: 'textarea',
+                                plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+                                toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+                                toolbar_mode: 'floating',
+                                tinycomments_mode: 'embedded',
+                                tinycomments_author: 'Author name',
+                                setup: function (editor) {
+                                   editor.on('change',function (e) {
+                                       editor.save();
+                                   });
+                               }
+                            });
+                        </script>
+
+
+                        <script src="javascript/nav.js"></script>
+                        <script src="javascript/loader.js"></script>
+                        <script src="javascript/closebtn.js"></script>
 </body>
 
 </html>

@@ -317,7 +317,7 @@ router.post("/marques",upload.single("marqPic"),function (req,res) {
 })
 
 router.get("/commandes",(req,res)=>{
-    ContactForm.find({},{fullName:1,message:2,date:3,favorite:4})
+    ContactForm.find({},{fullName:1,message:2,date:3,favorite:4,objet:5})
     .then(data => {
         res.render("admin/commandes",{data})
     })
@@ -325,4 +325,23 @@ router.get("/commandes",(req,res)=>{
     
 })
 
+router.get("/commandes/:id",(req,res)=>{
+    const Id = req.params.id;
+    if(!objId.isValid(Id)) {
+        res.render("admin/message",{ msg:"Id invalide", type:"error" })
+    }
+    else {
+        ContactForm.findById(Id)
+        .then(form =>{
+            if(!form){
+                res.render("admin/commandes",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes ",type: "error" })
+            }
+            res.render("admin/message",{ form })
+           
+        })
+        .catch(()=>{
+            res.render("admin/commandes",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes ",type: "error"})
+        })
+    }
+})
 module.exports = router;
