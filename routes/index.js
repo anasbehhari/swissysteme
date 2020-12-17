@@ -12,6 +12,9 @@ router.get("/catalogue",(req,res) => {
 router.get("/produits",(req,res) => {
     res.render("produits")
 })
+router.get("/brands",(req,res) => {
+    res.render("brands")
+})
 
 
 router.get("/contact",(req,res) => {
