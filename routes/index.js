@@ -24,7 +24,7 @@ router.get("/contact",(req,res) => {
 router.post("/contact",(req,res) => {
     const data = { companyName,firstname,lastname,email,objet,howFind,message } = req.body;
     if (data) {
-        let int;
+        let howf;
         switch (data.interest) {
             case "1":
                 int = "collaborer avec nous";
@@ -43,7 +43,7 @@ router.post("/contact",(req,res) => {
                 break;
         }
         
-        const NewContactForm = new ContactForm({ companyName: data.companyName,fullName: data.firstname + " " + data.lastname,email: data.email,objet,interest: int,message: data.message,date: moment().format("lll")})
+        const NewContactForm = new ContactForm({ companyName: data.companyName,fullName: data.firstname + " " + data.lastname,email: data.email,howFind: howFind,objet,message: data.message,date: moment().format("lll")})
 
         NewContactForm.save()
             .then(contactForm => {
