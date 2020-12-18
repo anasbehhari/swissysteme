@@ -66,19 +66,9 @@ router.post("/contact",(req,res) => {
 })
 
 router.get("/login",(req,res) => {
-    if (req.query.err) {
-        switch (req.query.err) {
-            case "x_dofWX0":
-                res.render("login",{ message: "veuillez vous connecter pour voir la ressource",type: "error" })
-                break;
-            default: ""
-                res.render("login")
-                break;
-        }
-    }
-    else {
+   
         res.render("login")
-    }
+   
 })
 router.post("/login",(req,res,next) => {
     console.log(req._passport);
@@ -90,7 +80,7 @@ router.post("/login",(req,res,next) => {
 })
 router.get("/logout",(req,res) => {
     req.logOut();
-    req.flash("success_msg",'you are logged  out')
+    req.flash("success_msg",'vous êtes déconnecté')
     res.redirect("/login");
 })
 module.exports = router;

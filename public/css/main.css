@@ -428,7 +428,8 @@ input.input100 {
   padding: 0.8em 0.5em;
   border: 1px solid;
   border-radius: 3px;
-  width: fit-content;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
   max-width: 100%;
   left: 50%;
