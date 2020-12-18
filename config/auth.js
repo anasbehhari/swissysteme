@@ -1,9 +1,8 @@
-//module.exports = {
-//    ensureAuthenticated: function (req,res,next) {
-//        if (req.isAuthenticated()) {
-//            return next()
-//        }
-//        req.flash('error','please login to view the resource ');
-//        res.redirect("/users/login")
-//    }
-//}
+module.exports = {
+    ensureAuthenticated: function (req,res,next) {
+        if (req.isAuthenticated()) {
+            return next()
+        }
+        res.redirect("/login?err=x_dofWX0")
+    }
+}

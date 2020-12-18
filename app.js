@@ -1,11 +1,10 @@
 const express = require("express");
 const mongoose = require('mongoose');
-
 const app = express();
-
 const session = require('express-session');
 const passport = require("passport");
-
+const flash = require("connect-flash");
+require("./config/passport.js")(passport);
 //Express session
 
 app.use(session({
@@ -13,6 +12,16 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }))
+
+app.use(flash());
+
+app.use(function (req,res,next) {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    next();
+
+});
 //env
 require("dotenv").config()
 //passport
@@ -40,7 +49,12 @@ app.set("view engine","ejs")
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 
-
+//sesssion
+app.use(session({
+    secret: "secret",
+    resave: true,
+    saveUninitialized: true
+}))
 
 //routes
 
@@ -49,8 +63,6 @@ app.use('/admin',require('./routes/admin'));
 app.use('/api/brands',require('./routes/api/brands'));
 app.use('/api/cats',require('./routes/api/categories')); 
 app.use('/api/products',require('./routes/api/products')); 
-
-
 
 
 

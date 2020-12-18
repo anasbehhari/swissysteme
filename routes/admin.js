@@ -4,9 +4,11 @@ const product = require("../models/Product");
 const brand = require("../models/Brand");
 const ContactForm = require("../models/ContactForm");
 const objId = require('mongodb').ObjectID;
-var multer = require('multer')
+const multer = require('multer')
 const path = require("path");
 const fs = require("fs");
+
+const { ensureAuthenticated } = require("../config/auth");
 var storage = multer.diskStorage({
     destination: function (req,file,cb) {
         cb(null,'./public/uploads');
@@ -36,7 +38,7 @@ function checkfiletype(file,cb) {
 
 
 
-router.get("/",(req,res) => {
+router.get("/",ensureAuthenticated,(req,res) => {
     categorie.find().then(categories => {
         product.find().then(products => {
             brand.find().then(brands=>{
@@ -51,7 +53,7 @@ router.get("/",(req,res) => {
 
 
 })
-router.get("/categories",(req,res) => {
+router.get("/categories",ensureAuthenticated,(req,res) => {
     categorie.find()
         .then(data => {
             res.render("admin/categories",{ categoriesData: data,num: data.length })
@@ -61,7 +63,7 @@ router.get("/categories",(req,res) => {
         })
 })
 //categories 
-router.post("/categories",(req,res) => {
+router.post("/categories",ensureAuthenticated,(req,res) => {
 
 
     if (req.body.catName) {
@@ -191,11 +193,11 @@ router.post("/categories",(req,res) => {
 
 })
 
-router.get("/produits",(req,res) => {
+router.get("/produits",ensureAuthenticated,(req,res) => {
     res.render("admin/produits")
 })
 
-router.post('/produits',upload.single("proPic"),function (req,res) {
+router.post('/produits',upload.single("proPic"),ensureAuthenticated,function (req,res) {
     const { proName,proCat,proMarq,proDesc } = req.body;
     if (proName && proMarq && proCat && proDesc && req.file) {
         const Image = "uploads/" + req.file.filename;
@@ -242,14 +244,14 @@ router.post('/produits',upload.single("proPic"),function (req,res) {
 })
 
 
-router.get("/marques",(req,res) => {
+router.get("/marques",ensureAuthenticated,(req,res) => {
     brand.find()
         .then(marques => res.render("admin/marques",{ marquesData: marques,num: marques.length }))
         .catch(err => {
             return res.render("admin/marques",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",num: 0 })
         })
 })
-router.post("/marques",upload.single("marqPic"),function (req,res) {
+router.post("/marques",upload.single("marqPic"),ensureAuthenticated,function (req,res) {
     if (req.body.marqName && req.file) {
         const flname = req.file.filename;
         const { marqName } = req.body;
@@ -316,7 +318,7 @@ router.post("/marques",upload.single("marqPic"),function (req,res) {
 
 })
 
-router.get("/commandes",(req,res)=>{
+router.get("/commandes",ensureAuthenticated,(req,res)=>{
     ContactForm.find({},{fullName:1,message:2,date:3,favorite:4,objet:5})
     .then(data => {
         res.render("admin/commandes",{data})
@@ -325,7 +327,7 @@ router.get("/commandes",(req,res)=>{
     
 })
 
-router.get("/commandes/:id",(req,res)=>{
+router.get("/commandes/:id",ensureAuthenticated,(req,res)=>{
     const Id = req.params.id;
     if(!objId.isValid(Id)) {
         res.render("admin/message",{ msg:"Id invalide", type:"error" })
