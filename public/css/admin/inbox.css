@@ -1,9 +1,6 @@
 .inbox-sec {
-  position: relative;
   width: 95%;
-  height: 85%;
-  max-height: 85%;
-  margin-top: 1em;
+  height: 88%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,6 +11,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  bottom: 0;
+  margin-top: 1em;
 }
 
 .inbox-sec .messages {
@@ -27,7 +26,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow-y: auto;
 }
 
 .inbox-sec .messages .message {
@@ -171,7 +169,7 @@
   padding: 0 !important;
   margin-bottom: 0.1em;
   cursor: pointer;
-  outline: none;
+  outline: none !important;
 }
 
 .inbox-sec .messages .message .bt-sc .c-bt button.fav i {
@@ -218,6 +216,7 @@
       -ms-flex-align: center;
           align-items: center;
   background-color: #fff;
+  overflow-y: auto !important;
 }
 
 .inbox-sec .display-message svg {

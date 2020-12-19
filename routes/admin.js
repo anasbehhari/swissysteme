@@ -41,12 +41,12 @@ function checkfiletype(file,cb) {
 router.get("/",ensureAuthenticated,(req,res) => {
     categorie.find().then(categories => {
         product.find().then(products => {
-            brand.find().then(brands=>{
-                res.render("admin/acceuil",{ categories: categories,products: products,brands:brands,num: categories.length,num2: products.length,num3:brands.length , username:req.user.username })
-           
-            }).catch(() => { res.render("admin/acceuil",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",num: 0,num2: 0,num3: 0,username: req.user.username  }) })
-        
-        }).catch(() => { res.render("admin/acceuil",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",num: 0,num2: 0,num3: 0,username: req.user.username  }) })
+            brand.find().then(brands => {
+                res.render("admin/acceuil",{ categories: categories,products: products,brands: brands,num: categories.length,num2: products.length,num3: brands.length,username: req.user.username })
+
+            }).catch(() => { res.render("admin/acceuil",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",num: 0,num2: 0,num3: 0,username: req.user.username }) })
+
+        }).catch(() => { res.render("admin/acceuil",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",num: 0,num2: 0,num3: 0,username: req.user.username }) })
 
 
     }).catch(() => { res.render("admin/acceuil",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques mxinutes ",type: "error",num: 0,num2: 0,num3: 0,username: req.user.username }) })
@@ -56,10 +56,10 @@ router.get("/",ensureAuthenticated,(req,res) => {
 router.get("/categories",ensureAuthenticated,(req,res) => {
     categorie.find()
         .then(data => {
-            res.render("admin/categories",{ categoriesData: data,num: data.length,username: req.user.username})
+            res.render("admin/categories",{ categoriesData: data,num: data.length,username: req.user.username })
         })
         .catch(() => {
-            return res.render("admin/categories",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",num: 0,username: req.user.username  })
+            return res.render("admin/categories",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",num: 0,username: req.user.username })
         })
 })
 //categories 
@@ -74,10 +74,10 @@ router.post("/categories",ensureAuthenticated,(req,res) => {
                 if (data) {
                     categorie.find()
                         .then(cats => {
-                            return res.render("admin/categories",{ msg: "cette catégorie existe déjà",type: "error",value: categorieName,categoriesData: cats,num: cats.length ,username: req.user.username})
+                            return res.render("admin/categories",{ msg: "cette catégorie existe déjà",type: "error",value: categorieName,categoriesData: cats,num: cats.length,username: req.user.username })
                         })
                         .catch(() => {
-                            return res.render("admin/categories",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",categoriesData: data,num: cats.length,username: req.user.username})
+                            return res.render("admin/categories",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",categoriesData: data,num: cats.length,username: req.user.username })
                         })
                 }
                 else {
@@ -86,11 +86,11 @@ router.post("/categories",ensureAuthenticated,(req,res) => {
                         .then(cat => {
                             categorie.find()
                                 .then(cats => {
-                                    return res.render("admin/categories",{ msg: `${cat.categorieName} a bien été enregistrée Id : ${cat._id}`,type: "success",categorieName,categoriesData: cats,num: cats.length,username: req.user.username})
+                                    return res.render("admin/categories",{ msg: `${cat.categorieName} a bien été enregistrée Id : ${cat._id}`,type: "success",categorieName,categoriesData: cats,num: cats.length,username: req.user.username })
 
                                 })
                                 .catch(() => {
-                                    return res.render("admin/categories",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",username: req.user.username})
+                                    return res.render("admin/categories",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",username: req.user.username })
                                 })
                         })
                         .catch(() => {
@@ -138,7 +138,7 @@ router.post("/categories",ensureAuthenticated,(req,res) => {
                                 datas.forEach(el => el.remove())
                                 categorie.find()
                                     .then(cats => {
-                                        return res.render("admin/categories",{ msg: `${data._id} avec le nom de ${data.categorieName} a bien été supprimer avec  tous les produits qui appartiennent à cette catégorie`,type: "success",categoriesData: cats,num: cats.length,username: req.user.username})
+                                        return res.render("admin/categories",{ msg: `${data._id} avec le nom de ${data.categorieName} a bien été supprimer avec  tous les produits qui appartiennent à cette catégorie`,type: "success",categoriesData: cats,num: cats.length,username: req.user.username })
                                     })
                                     .catch(() => {
                                         return res.render("admin/categories",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",categoriesData: cats,num: cats.length,username: req.user.username })
@@ -160,10 +160,10 @@ router.post("/categories",ensureAuthenticated,(req,res) => {
                 else if (data) {
                     categorie.find()
                         .then(cats => {
-                            return res.render("admin/categories",{ msg: `${data._id} avec le nom de ${data.categorieName} a bien été supprimer (sans supprimer tous les produits qui appartiennent à cette catégorie )`,type: "success",categoriesData: cats,num: cats.length,username: req.user.username})
+                            return res.render("admin/categories",{ msg: `${data._id} avec le nom de ${data.categorieName} a bien été supprimer (sans supprimer tous les produits qui appartiennent à cette catégorie )`,type: "success",categoriesData: cats,num: cats.length,username: req.user.username })
                         })
                         .catch(() => {
-                            return res.render("admin/categories",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",categoriesData: cats,num: cats.length,username: req.user.username})
+                            return res.render("admin/categories",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",categoriesData: cats,num: cats.length,username: req.user.username })
                         })
                 }
                 else {
@@ -194,14 +194,14 @@ router.post("/categories",ensureAuthenticated,(req,res) => {
 })
 
 router.get("/produits",ensureAuthenticated,(req,res) => {
-    res.render("admin/produits",{ username: req.user.username})
+    res.render("admin/produits",{ username: req.user.username })
 })
 
 router.post('/produits',upload.single("proPic"),ensureAuthenticated,function (req,res) {
     const { proName,proCat,proMarq,proDesc } = req.body;
     if (proName && proMarq && proCat && proDesc && req.file) {
         const Image = "uploads/" + req.file.filename;
-        
+
         const newProduct = new product({ productName: proName.split(' ').join('-'),productCategorie: proCat,productPartners: proMarq,productDescription: proDesc,productImage: Image });
         newProduct.save()
             .then(Product => {
@@ -216,7 +216,7 @@ router.post('/produits',upload.single("proPic"),ensureAuthenticated,function (re
 
         const { proId } = req.body;
         if (!objId.isValid(proId)) {
-            return res.render("admin/produits",{ msg: `  l'identifiant  ${proId} est invalide`,type: "error",value2: proId,username: req.user.username})
+            return res.render("admin/produits",{ msg: `  l'identifiant  ${proId} est invalide`,type: "error",value2: proId,username: req.user.username })
         }
         if (objId.isValid(proId)) {
             product.findByIdAndDelete({ _id: proId })
@@ -225,20 +225,20 @@ router.post('/produits',upload.single("proPic"),ensureAuthenticated,function (re
                         fs.unlink("public/" + deleted.productImage,(err) => {
                             if (err) throw err;
                         })
-                        return res.render("admin/produits",{ msg: `${deleted._id} avec le nom de ${deleted.productName} a bien été supprimer`,type: "success",username: req.user.username})
+                        return res.render("admin/produits",{ msg: `${deleted._id} avec le nom de ${deleted.productName} a bien été supprimer`,type: "success",username: req.user.username })
                     }
                     else {
-                        return res.render("admin/produits",{ msg: `l'identifiant  ${proId} n'a pas été trouvée`,type: "error",value2: proId,username: req.user.username})
+                        return res.render("admin/produits",{ msg: `l'identifiant  ${proId} n'a pas été trouvée`,type: "error",value2: proId,username: req.user.username })
                     }
                 })
                 .catch(() => {
-                    return res.render("admin/produits",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",username: req.user.username})
+                    return res.render("admin/produits",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",username: req.user.username })
                 })
         }
 
     }
     else {
-        return res.render("admin/produits",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes  ",type: "error",username: req.user.username})
+        return res.render("admin/produits",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes  ",type: "error",username: req.user.username })
     }
 
 })
@@ -246,9 +246,9 @@ router.post('/produits',upload.single("proPic"),ensureAuthenticated,function (re
 
 router.get("/marques",ensureAuthenticated,(req,res) => {
     brand.find()
-        .then(marques => res.render("admin/marques",{ marquesData: marques,num: marques.length,username: req.user.username}))
+        .then(marques => res.render("admin/marques",{ marquesData: marques,num: marques.length,username: req.user.username }))
         .catch(err => {
-            return res.render("admin/marques",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",num: 0,username: req.user.username})
+            return res.render("admin/marques",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",num: 0,username: req.user.username })
         })
 })
 router.post("/marques",upload.single("marqPic"),ensureAuthenticated,function (req,res) {
@@ -261,12 +261,12 @@ router.post("/marques",upload.single("marqPic"),ensureAuthenticated,function (re
             then(item => {
                 brand.find().select("-brandImage")
                     .then(items => {
-                        res.render("admin/marques",{ msg: `${item.brandName} a bien été enregistrée Id : ${item._id}`,type: "success",marquesData: items,num: items.length,username: req.user.username})
+                        res.render("admin/marques",{ msg: `${item.brandName} a bien été enregistrée Id : ${item._id}`,type: "success",marquesData: items,num: items.length,username: req.user.username })
                     })
                     .catch(err => res.render("admin/marques",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes " + err,type: "error",marquesData: items,num: items.length,username: req.user.username }))
             })
             .catch(err => {
-                res.render("admin/marques",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes " + err,type: "error",num: 0,username: req.user.username})
+                res.render("admin/marques",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes " + err,type: "error",num: 0,username: req.user.username })
             })
 
     }
@@ -275,10 +275,10 @@ router.post("/marques",upload.single("marqPic"),ensureAuthenticated,function (re
         if (!objId.isValid(marqId)) {
             brand.find().select("-brandImage")
                 .then(brands => {
-                    return res.render("admin/marques",{ msg: ` l'identifiant  ${marqId} est invalide`,type: "error",value2: marqId,marquesData: brands,num: brands.length,username: req.user.username})
+                    return res.render("admin/marques",{ msg: ` l'identifiant  ${marqId} est invalide`,type: "error",value2: marqId,marquesData: brands,num: brands.length,username: req.user.username })
                 })
                 .catch(() => {
-                    return res.render("admin/marques",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",marquessData: [],num: 0,username: req.user.username})
+                    return res.render("admin/marques",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",marquessData: [],num: 0,username: req.user.username })
                 })
         }
         if (objId.isValid(marqId)) {
@@ -290,14 +290,14 @@ router.post("/marques",upload.single("marqPic"),ensureAuthenticated,function (re
                                 fs.unlink("public/" + deleted.brandImage,(err) => {
                                     if (err) throw err;
                                 })
-                                return res.render("admin/marques",{ msg: `${deleted._id} avec le nom de ${deleted.brandName} a bien été supprimer`,type: "success",marquesData: brands,num: brands.length,username: req.user.username})
+                                return res.render("admin/marques",{ msg: `${deleted._id} avec le nom de ${deleted.brandName} a bien été supprimer`,type: "success",marquesData: brands,num: brands.length,username: req.user.username })
                             }
                             else {
                                 return res.render("admin/marques",{ msg: `l'identifiant  ${marqId} n'a pas été trouvée`,type: "error",value2: marqId,marquesData: brands,num: brands.length,username: req.user.username })
                             }
                         })
                         .catch(() => {
-                            return res.render("admin/marques",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",categoriesData: [],num: 0,username: req.user.username})
+                            return res.render("admin/marques",{ msg: "Oooops! quelque chose est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",categoriesData: [],num: 0,username: req.user.username })
                         })
                 })
                 .catch(() => {
@@ -312,38 +312,47 @@ router.post("/marques",upload.single("marqPic"),ensureAuthenticated,function (re
             .then(items => {
                 res.render("admin/marques",{ msg: `HTTP / 1.1 401 Non autorisé  WWW-Authenticate: Basic realm = "Accès au site de préparation"`,type: "error",marquesData: items,num: items.length,username: req.user.username })
             })
-            .catch(err => res.status(401).render("admin/marques",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes " + err,type: "error",marquesData: [],num: 0,username: req.user.username}))
+            .catch(err => res.status(401).render("admin/marques",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes " + err,type: "error",marquesData: [],num: 0,username: req.user.username }))
     }
 
 
 })
 
-router.get("/commandes",ensureAuthenticated,(req,res)=>{
-    ContactForm.find({},{fullName:1,message:2,date:3,favorite:4,objet:5})
-    .then(data => {
-        res.render("admin/commandes",{ data,username: req.user.username})
-    })
-    .catch(err=> console.log(err))
-    
+router.get("/commandes",ensureAuthenticated,(req,res) => {
+    ContactForm.find({},{ fullName: 1,message: 2,date: 3,favorite: 4,objet: 5 })
+        .then(data => {
+            res.render("admin/commandes",{ data,username: req.user.username })
+        })
+        .catch(err => console.log(err))
+
 })
 
-router.get("/commandes/:id",ensureAuthenticated,(req,res)=>{
+router.get("/commandes/:id",ensureAuthenticated,(req,res) => {
     const Id = req.params.id;
-    if(!objId.isValid(Id)) {
+    if (!objId.isValid(Id)) {
         res.render("admin/message",{ msg: "Id invalide",type: "error",username: req.user.username })
     }
     else {
         ContactForm.findById(Id)
-        .then(form =>{
-            if(!form){
-                res.render("admin/commandes",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",username: req.user.username})
-            }
-            res.render("admin/message",{ form })
-           
-        })
-        .catch(()=>{
-            res.render("admin/commandes",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",username: req.user.username})
-        })
+            .then(form => {
+                if (!form) {
+                    res.render("admin/commandes",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",username: req.user.username })
+                }
+                res.render("admin/message",{ form,username: req.user.username })
+
+            })
+            .catch(() => {
+                res.render("admin/commandes",{ msg: "Oooops! quelque chose s'est mal passé! Veuillez réessayer dans quelques minutes ",type: "error",username: req.user.username })
+            })
     }
 })
+router.get("/msg/del/:id",ensureAuthenticated,(req,res) => {
+    if (req.params.id && objId.isValid(req.params.id)) {
+        ContactForm.findByIdAndDelete(req.params.id).then(res.status(200).json({ status: "success" })).catch(err => res.status(400).json({ status: "failure",err }))
+    }
+    else{
+        res.status(400).json({ status: "failure",err })
+    }
+})
+
 module.exports = router;

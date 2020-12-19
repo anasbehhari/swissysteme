@@ -12,8 +12,11 @@
     <title>commandes</title>
     <style>
         .inbox-sec {
+            height: auto !important;
+        }
 
-    margin-top: 3em;
+        button {
+            outline: none;
         }
     </style>
 </head>
@@ -41,33 +44,91 @@
                                 <div class="display-message dis">
                                     <div class="t_sec">
                                         <div class="conl" style="width: 50%;">
-                                            <div class="date"><%= form.date %> </div>
-                                            <div class="object">
-                                                <%= form.objet %> 
+                                            <div class="date" style="display: flex;align-items: center;color: black;">
+                                                <img style="margin-right: 10px;width: 50px;"
+                                                    src="https://ui-avatars.com/api/?background=random&name=<%= form.fullName %>&format=svg&rounded=true"
+                                                    alt="">
+                                                <%= form.fullName %>
+
                                             </div>
-                                            <div class="from"><strong>De :</strong><%= form.email %> </div>
-                                            <div class="companyName"><strong>Nom Societe :</strong><%= form.companyName %> </div>
+
+                                            <div class="object">
+                                                <%= form.objet %>
+                                            </div>
+                                            <div class="from"><strong>De :</strong>
+                                                <%= form.email %>
+                                            </div>
+                                            <div class="companyName"><strong>Nom Societe :</strong>
+                                                <%= form.companyName %>
+                                            </div>
                                             <div class="fullname"><strong>Nom complet :</strong>
                                                 <%= form.fullName %>
+                                            </div>
+                                            <div class="from dateG"><strong>Date :</strong>
+                                                <%= form.date %>
                                             </div>
 
 
                                         </div>
                                         <div class="conr" style="width: 50%;">
-                                            <button> <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="long-arrow-alt-left" class="svg-inline--fa fa-long-arrow-alt-left fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"> <path fill="#9b55b6" d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"> </path> </svg> </button>
-                                            <button> <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="print" class="svg-inline--fa fa-print fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"> <path fill="#515fbd" d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"> </path> </svg> </button>
-                                            <button> <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash-alt" class="svg-inline--fa fa-trash-alt fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"> <path fill="#ff245c" d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"> </path> </svg> </button>
+                                            <button id="back"> <svg aria-hidden="true" focusable="false"
+                                                    data-prefix="fas" data-icon="long-arrow-alt-left"
+                                                    class="svg-inline--fa fa-long-arrow-alt-left fa-w-14" role="img"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                    <path fill="#9b55b6"
+                                                        d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z">
+                                                    </path>
+                                                </svg> </button>
+                                            <button id="print"> <svg aria-hidden="true" focusable="false"
+                                                    data-prefix="fas" data-icon="print"
+                                                    class="svg-inline--fa fa-print fa-w-16" role="img"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                    <path fill="#515fbd"
+                                                        d="M448 192V77.25c0-8.49-3.37-16.62-9.37-22.63L393.37 9.37c-6-6-14.14-9.37-22.63-9.37H96C78.33 0 64 14.33 64 32v160c-35.35 0-64 28.65-64 64v112c0 8.84 7.16 16 16 16h48v96c0 17.67 14.33 32 32 32h320c17.67 0 32-14.33 32-32v-96h48c8.84 0 16-7.16 16-16V256c0-35.35-28.65-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.84 7.16 16 16 16h48v96zm48 72c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z">
+                                                    </path>
+                                                </svg> </button>
+                                            <button id="delete"> <svg aria-hidden="true" focusable="false"
+                                                    data-prefix="fas" data-icon="trash-alt"
+                                                    class="svg-inline--fa fa-trash-alt fa-w-14" role="img"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                                    <path fill="#ff245c"
+                                                        d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z">
+                                                    </path>
+                                                </svg> </button>
                                         </div>
                                     </div>
-                                    <div class="message" style="outline: none !;" data-msg="<%= form.message %>">
-                                        
-                                         
+                                    <div class="message" style="outline: none !;" data-msg="<%= form.message %>"
+                                        data-id="<%= form._id %> ">
+
+
                                     </div>
                                 </div>
                             </div>
             </main>
             <script>
                 $(".message").append(document.querySelector(".message").getAttribute("data-msg"))
+                setTimeout(() => {
+                    document.querySelector(".message").setAttribute("data-msg","")
+                },0)
+                document.getElementById("back").onclick = () => {
+                    window.history.back()
+                }
+                document.getElementById("print").onclick = () => {
+                    window.print()
+                }
+                document.getElementById("delete").onclick = () => {
+                    fetch("/admin/msg/del/" + document.querySelector(".message").getAttribute("data-id"),{
+                        method: "GET"
+                    })
+                        .then(() => {
+                            alert("Message bien supprimer !")
+                            document.getElementById("com").click();
+
+                        })
+                        .catch(err => alert(err))
+
+                }
+
             </script>
             <script src="/javascript/closebtn.js"></script>
             <script src="/javascript/loader.js"></script>

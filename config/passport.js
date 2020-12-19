@@ -18,7 +18,7 @@ module.exports = function (passport) {
                     if (password == admin.password) {
                         return done(null,admin)
                     } else {
-                        return done(null,false,{ message: 'Mot de pass incorrect',type: "error" })
+                        return done(null,false,{ message: 'Email ou Mot de pass incorrect',type: "error" })
 
                     }
 

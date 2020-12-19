@@ -1,21 +1,18 @@
 .inbox-sec {
-    position: relative;
     width: 95%;
-    height: 85%;
-    max-height: 85%;
-    margin-top: 1em;
+    height: 88%;
     display: flex;
     align-items: center;
     border-radius: 3px;
     justify-content: space-between;
-    
+    bottom:  0;
+    margin-top: 1em;
     .messages {
         position: relative;
         width: 30%;
         height: 100%;
         display: flex;
         flex-direction: column;
-        overflow-y: auto;
         .message {
             width: 100%;
             height: fit-content;
@@ -106,7 +103,7 @@
                         padding: 0 !important;
                         margin-bottom: 0.1em;
                         cursor: pointer;
-                        outline: none;
+                        outline: none !important;
                         &.fav i {
                             color: #f5a91e;
                         }
@@ -139,6 +136,8 @@
         justify-content: center;
         align-items: center;
         background-color: #fff;
+        overflow-y: auto !important;
+
         svg {
             width: 5em;
             height: 5em;
@@ -212,8 +211,7 @@
                 font-family: "Source Sans Pro", sans-serif;
                 outline: none !important;
                 div {
-                outline: none !important;
-
+                    outline: none !important;
                 }
             }
         }

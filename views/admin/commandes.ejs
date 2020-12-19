@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="/css/admin/inbox.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>commandes</title>
+    <style>
+        .inbox-sec {
+            height: 88%;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,7 +34,7 @@
                             </div>
                         </div>
                         <% } %>
-                                
+
                             <div class="inbox-sec">
                                 <div class="messages">
 
@@ -47,8 +52,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="min-msg">
-                                                        <%= el.objet %></div>
-                                            <div class=" bt-sc">
+                                                        <%= el.objet %>
+                                                    </div>
+                                                    <div class=" bt-sc">
                                                 </a>
                                                 <div class="c-bt">
                                                     <input id="checkbox" type="checkbox" name="checkbox" />
@@ -56,7 +62,7 @@
                                                     <button class="btn"><i class="fa fa-inbox"></i></button>
                                                 </div>
                                                 <div class="dateTime">
-                                                    <%= el.date  %>
+                                                    <%= el.date %>
                                                 </div>
                                             </div>
                                 </div>

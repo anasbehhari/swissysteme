@@ -7,7 +7,7 @@ body .loader {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1b1b1b;
+  background-color: #fff;
   z-index: 100;
   transition: opacity 0.3s;
 }
