@@ -323,21 +323,24 @@ section#activite .text{
 }
 
 section#activite .row{
-  width: 80%;
+  width: auto;
   margin: auto;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 section#activite .col{
   position: relative;
-  float: left;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
-  height: 450px;
+  width: 400px;
+  height: 400px;
   padding: 10px;
   margin-right: 2.5em;
+  margin-bottom: 1em;
   box-sizing: border-box;
   transition: transform 0.6s;
   transform-style: preserve-3d;
@@ -510,8 +513,8 @@ section#activite .col .back .textP{
     text-align: center;
   }
   section#activite .col{
-    float: none;
-    width: 100%;
+    width: 90%;
     margin: 1em 0 ;
+    height: 400px;
   }
 }
