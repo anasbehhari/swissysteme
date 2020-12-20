@@ -65,7 +65,10 @@ app.use('/api/cats',require('./routes/api/categories'));
 app.use('/api/products',require('./routes/api/products')); 
 
 
-
+app.get("*",(req,res)=>{
+    res.render("notfound")
+    
+})
 
 
 //db config 

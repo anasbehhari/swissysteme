@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+.center-xy {
+  width: inherit;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+html,
+body {
+  font-family: "Roboto Mono", monospace;
+  font-size: 16px;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  background-color: #fff;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.container {
+  width: 100%;
+}
+
+.copy-container {
+  text-align: center;
+}
+
+p {
+  color: #000;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.handle {
+  background: #ed2232;
+  width: 14px;
+  height: 30px;
+  top: 0;
+  left: -10%;
+  margin-top: 1px;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: 0.5s opacity;
+  transition: 0.5s opacity;
+  -webkit-animation: 1s anime infinite ease-in;
+  animation: 1s anime infinite ease-in;
+}
+
+@-webkit-keyframes anime {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes anime {
+  100% {
+    opacity: 1;
+  }
+}
+
+#cb-replay {
+  fill: #666;
+  width: 20px;
+  margin: 15px;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  overflow: inherit;
+  cursor: pointer;
+}
+
+#cb-replay:hover {
+  fill: #888;
+}
+/*# sourceMappingURL=notfound.css.map */

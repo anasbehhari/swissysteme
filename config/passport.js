@@ -11,7 +11,6 @@ module.exports = function (passport) {
             Admin.findOne({ email: email })
                 .then(admin => {
                     if (!admin) {
-                        console.log("here");
                         return done(null,false,{ message: `Email n'existe pas !`,type: "error" });
                     }
                     //Match password

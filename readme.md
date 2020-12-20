@@ -1,6 +1,6 @@
 # swissysteme 
 
-## before install
+## before 
  -Create file .env and put this inside it
  ```env
 PORT= CHOOSE PORT AND PUT IT HERE //example : 3000
