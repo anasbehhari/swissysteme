@@ -29,10 +29,7 @@ body {
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  
 }
 
 body {
@@ -62,6 +59,9 @@ p {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+p strong {
+  font-size: 13px;
 }
 
 .handle {
@@ -106,3 +106,13 @@ p {
   fill: #888;
 }
 /*# sourceMappingURL=notfound.css.map */
+
+img {
+  position: absolute;
+  width: 8em;
+  height: 8em;
+  object-fit: contain;
+  top: -8em;
+  left: 45%;
+  transform: translateX(-50%);
+}

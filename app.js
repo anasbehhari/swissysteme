@@ -33,7 +33,9 @@ app.use("/css",express.static(__dirname + "public/css"))
 app.use("/img",express.static(__dirname + "public/img"))
 app.use("/js",express.static(__dirname + "public/js"))
 app.use("/fonts",express.static(__dirname + "public/fonts"))
-app.use("/uploads",express.static(__dirname + "public/fonts"))
+app.use("/uploads",express.static(__dirname + "public/uploads"))
+app.use("/views",express.static(__dirname + "public/views"))
+app.use("/media",express.static(__dirname + "public/media"))
 
 
 
