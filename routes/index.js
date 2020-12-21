@@ -86,7 +86,7 @@ router.get("/logout",(req,res) => {
 router.get("/produits/:cat",(req,res) => {
     if (req.params.cat) {
         const categorieName = req.params.cat;
-        Categorie.find({ categorieName })
+        Categorie.findOne({ categorieName })
             .then(cat => {
                 if (!cat) {
                     res.redirect("/")
@@ -100,8 +100,8 @@ router.get("/produits/:cat",(req,res) => {
                             }
                             else {
                                 console.log(products);
-                                res.render("produits",{cat})
-
+                                
+                                res.render("produits",{ Categorie: cat,Products:products})
                             }
                         })
                         .catch(() => {

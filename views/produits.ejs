@@ -10,7 +10,10 @@
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swissysteme Products | <%= cat._id  %>  </title>
+  <link rel="icon" href="/app.js" type="image/icon type">
+  <link rel="icon" href="/media/logo.svg" type="image/icon type">
+  <title>Swissysteme Products | <%= Categorie.categorieName %>
+  </title>
 </head>
 
 <body>
@@ -25,37 +28,37 @@
         </div>
         <div class="nav-b">
           <ul>
-            <!--<li><img src="media/bolt.svg" alt=""> Electricié</li>-->
-            <!--<li><img src="media/solar-energy.svg" alt="">Photovoltaique</li>-->
-            <li><img src="/media/air-conditioner.svg" alt="">
-              <div class="text">Climatisation</div>
+            <li>
+                <img src="/media/<%= Categorie.categorieName %>.svg" alt="">
+              <div class="text">
+                <%= Categorie.categorieName %>
+              </div>
             </li>
           </ul>
         </div>
         <div class="containers">
-          <div class="box">
-            <div class="imgBx">
-              <img
-                src="https://cdn11.bigcommerce.com/s-9srn18to/images/stencil/500x500/products/1973/22411/BILLOW-MAXI-TANGERINE_01__92879.1606370973.jpg?c=2"
-                alt="">
-            </div>
-            <div class="card-footer">
-              <a href="">
-                <h3>Panneaux Photovoltaique</h3>
-              </a>
-            </div>
-          </div>
+          
+        <% if (Products.length !=0) { %>
+          <% Products.forEach(el=> { %>
+            <div class="box">
+              <div class="imgBx">
+                <img src="/<%= el.productImage %> " alt="">
+              </div>
+              <div class="card-footer">
+                <a href="/produits/<%= Categorie.categorieName+"/"+el.productName %>">
+                  <h3>
+                    <%= el.productName.split('-').join(' ') %></h3>
+                        </a>
+                      </div>
+                    </div>
+                  <% }) %>
+        <% } %>  
 
-          <div class="box">
-            <div class="imgBx">
-              <img src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/Onduleurs Offgrid Hybride"
-                alt="">
-            </div>
-            <div class="card-footer">
-              <h3>Onduleurs Offgrid Hybride</h3>
-            </div>
-          </div>
+        <%  if (Products.length ==0) { %>
+          <div class="empty">Aucun produit disponible pour cette catégorie revenez plus tard !!</div>
+        <% } %>
 
+  
         </div>
       </section>
       <%- include('components/footer.ejs') %>
@@ -63,7 +66,9 @@
         <script src="/javascript/loader.js"></script>
         <script src="/javascript/nav.js"></script>
 
+        <script>
 
+        </script>
 </body>
 
 </html>
