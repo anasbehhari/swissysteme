@@ -131,7 +131,6 @@ router.get("/produits/:cat/:prod",(req,res) => {
     if (req.params.cat && req.params.prod) {
         const cat = req.params.cat;
         const prod = req.params.prod;
-
         Categorie.findOne({ categorieName: cat })
             .then(cat => {
                 if (!cat) {
@@ -146,7 +145,7 @@ router.get("/produits/:cat/:prod",(req,res) => {
                             else {
                                 Brands.find({ _id:prod.productPartners }).select("-_id")
                                         .then(brands => {
-                                            res.render("brands",{brands})
+                                            res.render("brands",{brands,prod:prod.productName})
                                         })
                                         .catch(() => {
                                             res.redirect("/")
