@@ -9,12 +9,12 @@ const passport = require("passport");
 
 router.get("/",(req,res) => {
     Brands.find().select("-brandName")
-    .then(Brands=>{
-        res.render("welcome",{Brands})
-    })
-    .catch(err => {
-        res.redirect("/");
-    })
+        .then(Brands => {
+            res.render("welcome",{ Brands })
+        })
+        .catch(err => {
+            res.redirect("/");
+        })
 })
 router.get("/catalogue",(req,res) => {
     res.render("catalogue")
@@ -129,23 +129,28 @@ router.get("/produits/:cat",(req,res) => {
 })
 router.get("/produits/:cat/:prod",(req,res) => {
     if (req.params.cat && req.params.prod) {
-        const cat  = req.params.cat;
+        const cat = req.params.cat;
         const prod = req.params.prod;
 
-        Categorie.findOne({ categorieName:cat })
+        Categorie.findOne({ categorieName: cat })
             .then(cat => {
                 if (!cat) {
                     res.redirect("/")
                 }
                 else {
-                    Produit.findOne({ productCategorie: cat.categorieName,productName:prod })
+                    Produit.findOne({ productCategorie: cat.categorieName,productName: prod })
                         .then(prod => {
                             if (prod == null) {
                                 res.redirect("/")
                             }
                             else {
-                                console.log(prod);
-                                res.render("brands",{ Categorie: cat,prod: prod })
+                                Brands.find({ _id:prod.productPartners }).select("-_id")
+                                        .then(brands => {
+                                            res.render("brands",{brands})
+                                        })
+                                        .catch(() => {
+                                            res.redirect("/")
+                                        })
                             }
                         })
                         .catch(() => {

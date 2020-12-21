@@ -1,5 +1,5 @@
 section{
-    margin-top: 5em;
+    margin: 15em 0 4em 0;
     width: 100%;
 }
 section .nav-bar{
@@ -7,15 +7,16 @@ section .nav-bar{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 4em;
 }
 section .nav-bar i{
     font-size: 4em;
     margin: 1em;
     color:  #eeeeee;
 }
-section .nav-bar h2{
+section .nav-bar h3{
     font-family: Falling;
-    font-size: 2em;
+    font-size: 1.5em;
     color: rgb(147, 144, 144);
     font-weight: 400;
     text-align: center;
@@ -39,10 +40,11 @@ section .cnt .colum{
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 18px -3px  rgba(0, 0, 0, 0.1);
+    background-color: #f2f2f5;
 }
 section .cnt .colum .image{
-    width: 100%;
+    width: 80%;
     height: 80%;
     display: flex;
     justify-content: center;
@@ -51,7 +53,7 @@ section .cnt .colum .image{
 section .cnt .colum .image img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
 }
 section .cnt .colum .brand-name{

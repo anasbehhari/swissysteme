@@ -17,10 +17,23 @@
     <%- include('components/loader.ejs') %>
         <%- include('components/nav.ejs',{acceuil:"",produits:"active",catalogue:"",contact:""}) %>
             <section>
-              </section>
+                <div class="nav-bar">
+                    <h3>Les Marques de produit</h3>
+                </div>
+                <div class="cnt">
+                    
+                   <% brands.forEach(el => { %>
+                    <div class="colum">
+                        <div class="image">
+                            <img src="/<%= el.brandImage %>" alt="">
+                        </div>
+                        <div class="brand-name"><%= el.brandName %></div>
+                    </div>
+                   <% }) %>
+                </div>
+            </section>
 
-
-            <!--<%- include('components/footer.ejs') %>-->
+            <%- include('components/footer.ejs') %>
             <script src="/javascript/loader.js"></script>
             <script src="/javascript/nav.js"></script>
 </body>
