@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const ContactForm = require("../models/ContactForm")
+const Categorie = require("../models/Categorie")
+const Produit = require("../models/Product")
+
 const moment = require("moment");
 const passport = require("passport");
 
@@ -11,9 +14,7 @@ router.get("/catalogue",(req,res) => {
     res.render("catalogue")
 })
 
-router.get("/produits",(req,res) => {
-    res.render("produits")
-})
+
 router.get("/brands",(req,res) => {
     res.render("brands")
 })
@@ -66,9 +67,9 @@ router.post("/contact",(req,res) => {
 })
 
 router.get("/login",(req,res) => {
-   
-        res.render("login")
-   
+
+    res.render("login")
+
 })
 router.post("/login",(req,res,next) => {
     passport.authenticate("local",{
@@ -81,5 +82,37 @@ router.get("/logout",(req,res) => {
     req.logOut();
     req.flash("success_msg",'vous êtes déconnecté')
     res.redirect("/login");
+})
+router.get("/produits/:cat",(req,res) => {
+    if (req.params.cat) {
+        const categorieName = req.params.cat;
+        Categorie.find({ categorieName })
+            .then(cat => {
+                if (!cat) {
+                    res.redirect("/")
+                }
+                else {
+                    console.log(cat);
+                    Produit.find({ productCategorie: cat.categorieName })
+                        .then(products => {
+                            if(products==null){
+                                res.redirect("/")
+                            }
+                            else {
+                                console.log(products);
+                                res.render("produits",{cat})
+
+                            }
+                        })
+                        .catch(() => {
+                            res.redirect("/")
+                        })
+                }
+
+            })
+            .catch(() => {
+                res.redirect("/")
+            })
+    }
 })
 module.exports = router;

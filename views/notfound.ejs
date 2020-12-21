@@ -6,16 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="/css/notfound.css">
+  <link rel="stylesheet" href="/css/loader.css">
 </head>
 
 <body>
+    <%- include("components/loader.ejs") %>
+
   <div class="container">
 
     <div class="copy-container center-xy">
-      <img src="/media/logo.png" alt="">
         <p>
           <span class="handle"></span>
-          404 Page non trouvée. <strong>Rediriger / dans 3 secondes</strong>
+          404 Page non trouvée.
         </p>
     </div>
 
@@ -24,4 +26,5 @@
        window.history.back();
       },3000)
     </script>
+    <script src="/javascript/loader.js"></script>
   </div>

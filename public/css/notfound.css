@@ -59,6 +59,7 @@ p {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  text-align: center;
 }
 p strong {
   font-size: 13px;

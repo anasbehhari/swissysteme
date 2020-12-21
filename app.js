@@ -30,7 +30,6 @@ app.use(passport.session());
 //public folders
 app.use(express.static('./public'));
 app.use("/css",express.static(__dirname + "public/css"))
-app.use("/img",express.static(__dirname + "public/img"))
 app.use("/js",express.static(__dirname + "public/js"))
 app.use("/fonts",express.static(__dirname + "public/fonts"))
 app.use("/uploads",express.static(__dirname + "public/uploads"))

@@ -3,44 +3,46 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/welcome.css">
-  <link rel="stylesheet" href="css/swiper.min.css">
-  <link rel="stylesheet" href="css/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/loader.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/card.css">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/loader.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/card.css">
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>Swissysteme Products | <%= cat._id  %>  </title>
 </head>
 
 <body>
   <%- include('components/loader.ejs') %>
-  <%- include('components/nav.ejs',{acceuil:"",produits:"active",catalogue:"",contact:""}) %>
-      <section style="margin-top: 8em;">
+    <%- include('components/nav.ejs',{acceuil:"",produits:"active",catalogue:"",contact:""}) %>
+      <section style="margin: 13em 0 5em 0;">
         <div class="top-head">
-          <img src="media/chat.svg" alt="">
+          <img src="/media/chat.svg" alt="">
           <div class="large-text">Marchés & clients</div>
-          <div class="small-text">Nous fournissons des produits et des services qui dépassent les attentes de nos clients</div>
+          <div class="small-text">Nous fournissons des produits et des services qui dépassent les attentes de nos
+            clients</div>
         </div>
         <div class="nav-b">
           <ul>
-              <li><img src="media/bolt.svg" alt=""> Electricié</li>
-              <li><img src="media/solar-energy.svg" alt="">Photovoltaique</li>
-              <li><img src="media/air-conditioner.svg" alt="">Climatisation</li>
-          </ul> 
-      </div>
+            <!--<li><img src="media/bolt.svg" alt=""> Electricié</li>-->
+            <!--<li><img src="media/solar-energy.svg" alt="">Photovoltaique</li>-->
+            <li><img src="/media/air-conditioner.svg" alt="">
+              <div class="text">Climatisation</div>
+            </li>
+          </ul>
+        </div>
         <div class="containers">
           <div class="box">
             <div class="imgBx">
-              <img src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/Panneaux-Photovoltaique.jpg"
+              <img
+                src="https://cdn11.bigcommerce.com/s-9srn18to/images/stencil/500x500/products/1973/22411/BILLOW-MAXI-TANGERINE_01__92879.1606370973.jpg?c=2"
                 alt="">
             </div>
             <div class="card-footer">
-              <!-- <h3>Lorem Ipusem</h3> -->
-              <h3>Panneaux Photovoltaique</h3>
+              <a href="">
+                <h3>Panneaux Photovoltaique</h3>
+              </a>
             </div>
           </div>
 
@@ -50,94 +52,16 @@
                 alt="">
             </div>
             <div class="card-footer">
-              <!-- <h3>Lorem Ipusem</h3> -->
               <h3>Onduleurs Offgrid Hybride</h3>
             </div>
           </div>
-
-          <div class="box">
-            <div class="imgBx">
-              <img src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/Parafoudre.jpg" alt="">
-            </div>
-            <div class="card-footer">
-              <!-- <h3>Lorem Ipusem</h3> -->
-              <h3>Parafoudre</h3>
-            </div>
-          </div>
-          <div class="box">
-            <div class="imgBx">
-              <img src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/Panneaux-Photovoltaique.jpg"
-                alt="">
-            </div>
-            <div class="card-footer">
-              <!-- <h3>Lorem Ipusem</h3> -->
-              <h3>Panneaux Photovoltaique</h3>
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="imgBx">
-              <img src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/Onduleurs Offgrid Hybride"
-                alt="">
-            </div>
-            <div class="card-footer">
-              <!-- <h3>Lorem Ipusem</h3> -->
-              <h3>Onduleurs Offgrid Hybride</h3>
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="imgBx">
-              <img src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/Parafoudre.jpg" alt="">
-            </div>
-            <div class="card-footer">
-              <!-- <h3>Lorem Ipusem</h3> -->
-              <h3>Parafoudre</h3>
-            </div>
-          </div>
-          <div class="box">
-            <div class="imgBx">
-              <img src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/Panneaux-Photovoltaique.jpg"
-                alt="">
-            </div>
-            <div class="card-footer">
-              <!-- <h3>Lorem Ipusem</h3> -->
-              <h3>Panneaux Photovoltaique</h3>
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="imgBx">
-              <img src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/Onduleurs Offgrid Hybride"
-                alt="">
-            </div>
-            <div class="card-footer">
-              <!-- <h3>Lorem Ipusem</h3> -->
-              <h3>Onduleurs Offgrid Hybride</h3>
-            </div>
-          </div>
-
-          <div class="box">
-            <div class="imgBx">
-              <img src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/Parafoudre.jpg" alt="">
-            </div>
-            <div class="card-footer">
-              <!-- <h3>Lorem Ipusem</h3> -->
-              <h3>Parafoudre</h3>
-            </div>
-          </div>
-
 
         </div>
       </section>
       <%- include('components/footer.ejs') %>
 
-        <script src="javascript/loader.js"></script>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <script src="javascript/swiper.js"></script>
-        <script src="javascript/nav.js"></script>
-        <script src="javascript/particles.js"></script>
-        <script src="javascript/setup.js"></script>
+        <script src="/javascript/loader.js"></script>
+        <script src="/javascript/nav.js"></script>
 
 
 </body>

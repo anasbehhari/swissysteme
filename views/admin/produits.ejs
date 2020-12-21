@@ -7,57 +7,31 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/admin/ini.css">
     <link rel="stylesheet" href="/css/admin/loader.css">
-
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <title>Categories</title>
 </head>
 
 <body>
     <%- include("../components/admin/loader.ejs") %>
-    <%- include("../components/admin/nav.ejs",{acceuil:"",Categories:"",produits:"active",settings:"",marques:"",commandes:""}) %>
-        <main>
-            <%- include("../components/admin/header.ejs") %>
-                <% if ( typeof msg !='undefined' ) { %>
-                    <div class="alert <%= type %>">
-                        <div class="msg">
-                            <%= msg %>
+        <%- include("../components/admin/nav.ejs",{acceuil:"",Categories:"",produits:"active",settings:"",marques:"",commandes:""})
+            %>
+            <main>
+                <%- include("../components/admin/header.ejs") %>
+                    <% if ( typeof msg !='undefined' ) { %>
+                        <div class="alert <%= type %>">
+                            <div class="msg">
+                                <%= msg %>
+                            </div>
+                            <div class="close-btn">
+                                <i class="fa fa-times"></i>
+                            </div>
                         </div>
-                        <div class="close-btn">
-                            <i class="fa fa-times"></i>
-                        </div>
-                    </div>
-                    <% } %>
-                        <section id="anal">
-                            <div class="container-dashboard">
-                                <div class="con-7">
-                                    <div class="card-ov">
-                                        <div class="icon">
-                                            <svg class="s10" enable-background="new 0 0 48 48" id="Layer_4"
-                                                version="1.1" viewBox="0 0 48 48" xml:space="preserve"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                <g>
-                                                    <polygon
-                                                        points="26.068,24.846 26.068,47.987 45.285,38.04 45.285,14.898  ">
-                                                    </polygon>
-                                                    <polygon
-                                                        points="2.715,36.078 21.872,47.987 21.872,24.71 2.715,13.069  ">
-                                                    </polygon>
-                                                    <path
-                                                        d="M23.497,0.013L4.89,9.571c0.04-0.054,19.08,12.026,19.08,12.026L43.188,11.38L23.497,0.013z">
-                                                    </path>
-                                                </g>
-                                            </svg>
-                                        </div>
-                                         <div class="number" id="number"></div>
-                                        <div class="total">Totale produits</div>
-                                    </div>
-                                </div>
-                                <div class="con-7">
-                                    <div class="card-desc-ui">
-                                        <div class="top-sec">
-                                            <div class="text">produits</div>
+                        <% } %>
+                            <section id="anal">
+                                <div class="container-dashboard">
+                                    <div class="con-7">
+                                        <div class="card-ov">
                                             <div class="icon">
                                                 <svg class="s10" enable-background="new 0 0 48 48" id="Layer_4"
                                                     version="1.1" viewBox="0 0 48 48" xml:space="preserve"
@@ -76,76 +50,103 @@
                                                     </g>
                                                 </svg>
                                             </div>
+                                            <div class="number" id="number"></div>
+                                            <div class="total">Totale produits</div>
                                         </div>
-                                        <ul id="productsIN">
-                                        
-                                        </ul>
                                     </div>
-                                </div>
+                                    <div class="con-7">
+                                        <div class="card-desc-ui">
+                                            <div class="top-sec">
+                                                <div class="text">produits</div>
+                                                <div class="icon">
+                                                    <svg class="s10" enable-background="new 0 0 48 48" id="Layer_4"
+                                                        version="1.1" viewBox="0 0 48 48" xml:space="preserve"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                        <g>
+                                                            <polygon
+                                                                points="26.068,24.846 26.068,47.987 45.285,38.04 45.285,14.898  ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="2.715,36.078 21.872,47.987 21.872,24.71 2.715,13.069  ">
+                                                            </polygon>
+                                                            <path
+                                                                d="M23.497,0.013L4.89,9.571c0.04-0.054,19.08,12.026,19.08,12.026L43.188,11.38L23.497,0.013z">
+                                                            </path>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <ul id="productsIN">
+
+                                            </ul>
+                                        </div>
+                                    </div>
 
 
-                            </div>
-                        </section>
-                        <section id="Add-cat">
-                            <div class="title">Ajouter un Produit</div>
-                            <form action method="POST" enctype="multipart/form-data">
-                                <div>
-                                    <label for="proName">Nom de produit</label>
-                                    <input required type="text" placeholder=" Entrer le nom du produit ici "
-                                        id="proName" name="proName"
-                                        value="<%= typeof value != 'undefined' ? value : '' %>">
                                 </div>
-                                <div>
-                                    <label for="proCat">Categorie de produit</label>
-                                    <select required name="proCat" id="proCat">
-                                        <option value="-1" hidden>sélectionner la catégorie du produit ici</option>
-                                      
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="proMarq">Marques de produit</label>
-                                    <select multiple required name="proMarq" id="proMarq">
-                                        <option value="-1" hidden>sélectionner les marques du produit ici</option>
-                                       
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="proDesc">Description de produit</label>
-                                    <textarea required type="text" placeholder=" Entrer la description du  produit ici "
-                                        id="proDesc"
-                                        name="proDesc"><%= typeof value !='undefined' ? value : '' %></textarea>
-                                </div>
-                                <div>
-                                    <label for="prodPic">Photo de produit</label>
-                                    <input required style="margin-top: 1em;" type="file" name="proPic" id="pro
+                            </section>
+                            <section id="Add-cat">
+                                <div class="title">Ajouter un Produit</div>
+                                <form action method="POST" enctype="multipart/form-data">
+                                    <div>
+                                        <label for="proName">Nom de produit</label>
+                                        <input required type="text" placeholder=" Entrer le nom du produit ici "
+                                            id="proName" name="proName"
+                                            value="<%= typeof value != 'undefined' ? value : '' %>">
+                                    </div>
+                                    <div>
+                                        <label for="proCat">Categorie de produit</label>
+                                        <select required name="proCat" id="proCat">
+                                            <option value="-1" hidden>sélectionner la catégorie du produit ici</option>
+
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="proMarq">Marques de produit</label>
+                                        <select aria-multiselectable="true" multiple required name="proMarq" id="proMarq">
+                                            <option value="-1" hidden>sélectionner les marques du produit ici</option>
+
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="proDesc">Description de produit</label>
+                                        <textarea required type="text"
+                                            placeholder=" Entrer la description du  produit ici " id="proDesc"
+                                            name="proDesc"><%= typeof value !='undefined' ? value : '' %></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="prodPic">Photo de produit</label>
+                                        <input required style="margin-top: 1em;" type="file" name="proPic" id="pro
                                     Pic" accept="image/*" onchange="loadFile(event)">
-                                    <div class="con">
-                                        <img class="cover" id="output" />
-                                        <span>Aperçu de l'image </span>
+                                        <div class="con">
+                                            <img class="cover" id="output" />
+                                            <span>Aperçu de l'image </span>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <button>Ajouter</button>
-                            </form>
-                        </section>
-                        <section id="Add-cat">
-                            <div class="title">Supprimer un produit</div>
-                            <form action method="POST">
-                                <div>
-                                    <label for="proId">Id de produit</label>
-                                    <input required type="text" placeholder=" Entrer id de produit  ici " id="proId"
-                                        name="proId" value="<%= typeof value2 != 'undefined' ? value2 : '' %>">
-                                </div>
-                                
-                                <button type="submit">Supprimer</button>
-                            </form>
-                        </section>
-        </main>
-        <script src="/javascript/loader.js"></script>
-        <script src="/javascript/closebtn.js"></script>
-        <script src="/javascript/ini.Prod.js"></script>
+                                    <button>Ajouter</button>
+                                </form>
+                            </section>
+                            <section id="Add-cat">
+                                <div class="title">Supprimer un produit</div>
+                                <form action method="POST">
+                                    <div>
+                                        <label for="proId">Id de produit</label>
+                                        <input required type="text" placeholder=" Entrer id de produit  ici " id="proId"
+                                            name="proId" value="<%= typeof value2 != 'undefined' ? value2 : '' %>">
+                                    </div>
 
-        
+                                    <button type="submit">Supprimer</button>
+                                </form>
+                            </section>
+            </main>
+           
+            <script src="/javascript/loader.js"></script>
+            <script src="/javascript/closebtn.js"></script>
+            <script src="/javascript/ini.Prod.js"></script>
+
+
 </body>
 
 </html>

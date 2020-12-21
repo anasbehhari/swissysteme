@@ -43,7 +43,7 @@ if(cats && brands) {
      .then(res=> res.json())
      .then(dataCats=>{
          dataCats.forEach(el => {
-             $("#proCat").append(`<option value="${el._id}">${el.categorieName}</option>`)
+             $("#proCat").append(`<option value="${el.categorieName}">${el.categorieName}</option>`)
          });
      })
     },0)
