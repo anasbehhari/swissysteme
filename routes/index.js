@@ -3,22 +3,26 @@ const router = express.Router();
 const ContactForm = require("../models/ContactForm")
 const Categorie = require("../models/Categorie")
 const Produit = require("../models/Product")
-
+const Brands = require("../models/Brand")
 const moment = require("moment");
 const passport = require("passport");
 
 router.get("/",(req,res) => {
-    res.render("welcome")
+    Brands.find().select("-brandName")
+    .then(Brands=>{
+        res.render("welcome",{Brands})
+    })
+    .catch(err => {
+        res.redirect("/");
+    })
 })
 router.get("/catalogue",(req,res) => {
     res.render("catalogue")
 })
 
-
 router.get("/brands",(req,res) => {
     res.render("brands")
 })
-
 
 router.get("/contact",(req,res) => {
     res.render("contact")
@@ -68,9 +72,15 @@ router.post("/contact",(req,res) => {
 
 router.get("/login",(req,res) => {
 
-    res.render("login")
+    if (req.user) {
+        res.redirect("/admin")
+    }
+    else {
+        res.render("login")
+    }
 
 })
+
 router.post("/login",(req,res,next) => {
     passport.authenticate("local",{
         successRedirect: "/admin",
@@ -78,11 +88,13 @@ router.post("/login",(req,res,next) => {
         failureFlash: true
     })(req,res,next)
 })
+
 router.get("/logout",(req,res) => {
     req.logOut();
     req.flash("success_msg",'vous êtes déconnecté')
     res.redirect("/login");
 })
+
 router.get("/produits/:cat",(req,res) => {
     if (req.params.cat) {
         const categorieName = req.params.cat;
@@ -95,13 +107,13 @@ router.get("/produits/:cat",(req,res) => {
                     console.log(cat);
                     Produit.find({ productCategorie: cat.categorieName })
                         .then(products => {
-                            if(products==null){
+                            if (products == null) {
                                 res.redirect("/")
                             }
                             else {
                                 console.log(products);
-                                
-                                res.render("produits",{ Categorie: cat,Products:products})
+
+                                res.render("produits",{ Categorie: cat,Products: products })
                             }
                         })
                         .catch(() => {
@@ -113,6 +125,41 @@ router.get("/produits/:cat",(req,res) => {
             .catch(() => {
                 res.redirect("/")
             })
+    }
+})
+router.get("/produits/:cat/:prod",(req,res) => {
+    if (req.params.cat && req.params.prod) {
+        const cat  = req.params.cat;
+        const prod = req.params.prod;
+
+        Categorie.findOne({ categorieName:cat })
+            .then(cat => {
+                if (!cat) {
+                    res.redirect("/")
+                }
+                else {
+                    Produit.findOne({ productCategorie: cat.categorieName,productName:prod })
+                        .then(prod => {
+                            if (prod == null) {
+                                res.redirect("/")
+                            }
+                            else {
+                                console.log(prod);
+                                res.render("brands",{ Categorie: cat,prod: prod })
+                            }
+                        })
+                        .catch(() => {
+                            res.redirect("/")
+                        })
+                }
+
+            })
+            .catch(() => {
+                res.redirect("/")
+            })
+    }
+    else {
+        res.redirect("/")
     }
 })
 module.exports = router;

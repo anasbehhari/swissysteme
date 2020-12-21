@@ -16,242 +16,218 @@
     <link rel="icon" href="media/logo.svg" type="image/icon type">
 
     <title>
-        Swissysteme Acceuil | Produits D'une Qualité maximale et  excellent services
+        Swissysteme Acceuil | Produits D'une Qualité maximale et excellent services
     </title>
 </head>
 
-<body >
+<body>
     <%- include('components/loader.ejs') %>
-    <%- include('components/nav.ejs',{acceuil:"active",produits:"",catalogue:"",contact:""}) %>
-    <div class="video-container">
-        <div class="video-con">
-            <video autoplay="" loop="" muted="">
-                <source src="media/video1.mp4" autoplay="" controls="false" type="video/mp4">
-            </video>
-        </div>
-        <div class="text-display">
-            <div class="line-top line"></div>
-            <div class="text">
-                <span>Produits</span>
-                <br>
-                <small>D'une Qualité maximale et <br> excellent services</small>
-            </div>
-            <div class="line-btm line"></div>
-        </div>
-    </div>
-    <section id="particles-js" >
-        <div class="our-company" data-aos="fade-up">
-            <p class="ourcompany">
-                <img id="logo67" src="media/commas.svg" alt="">
-                <span>Swissysteme</span> est une société de distribution, d'installation et de conseils. Cette société
-                est
-                née d'une volonté de
-                répondre au mieux aux attentes des particuliers et industriels dans le secteur d'électricité, des
-                énergies
-                renouvelables, de climatisation et de plomberie.
-
-            </p>
-
-        </div>
-        <section id="our-services" class="part" >
-            <div class="dt-sec-grp con78" data-aos="fade-up">
-                <div class="con-secgRP" style="width: fit-content;">
-                    <div class="bg-title">
-                        <div class="text">
-                            <div class="line-top1 line"></div>
-                            NOTRE ENGAGMENT
-                            <div class="line-btm2 line"></div>
-
-                        </div>
-                    </div>
+        <%- include('components/nav.ejs',{acceuil:"active",produits:"",catalogue:"",contact:""}) %>
+            <div class="video-container">
+                <div class="video-con">
+                    <video autoplay="" loop="" muted="">
+                        <source src="media/video1.mp4" autoplay="" controls="false" type="video/mp4">
+                    </video>
                 </div>
-                <ul>
-
-                    <li>UNE <span>QUALITÉ</span> D'EXÉCUTION ASSURÉE PAR LE <span>PROFESSIONNALISME</span>, DE NOS
-                        INSTALLATEURS.
-                    </li>
-                    <li>UN <span>SUIVI CONTINU</span> DE LA CONCEPTION AU RACCORDEMENT.</li>
-                    <li>DES PRIX <span>ATTRACTIFS</span> ET COMPÉTITIFS.</li>
-                    <li>DU MATÉRIEL <span>HAUT DE GAMME</span>, GARANTI POUR SON RENDEMENT ET SA LONGÉVITÉ
-                        <span>EXCEPTIONNELS.</span></li>
-
-                </ul>
-            </div>
-            </div>
-            <div class="pic-side-poster con78" data-aos="fade-right">
-                <img src="media/ourengagement.jpg" alt="">
-            </div>
-        </section>
-        <section id="our-engagment" class="part part2">
-            <div class="dt-sec-grp con78" data-aos="fade-right">
-                <div class="con-secgRP">
-                    <div class="bg-title">
-                        <div class="text">
-                            <div class="line-top1 line"></div>
-
-                            NOTRE SERVICES
-                            <div class="line-btm2 line"></div>
-
-                        </div>
+                <div class="text-display">
+                    <div class="line-top line"></div>
+                    <div class="text">
+                        <span>Produits</span>
+                        <br>
+                        <small>D'une Qualité maximale et <br> excellent services</small>
                     </div>
-                </div>
-                <ul>
-                    <div>
-                        <li>ÊTRE PROCHE DE VOUS</li>
-                        <li>REPONDRE A VOS BESION</li>
-                    </div>
-                    <div>
-                        <li>S'ADAPTER À VOS PLANNINGS</li>
-                        <li>ACCOMPAGNER VOS PROJETS </li>
-                    </div>
-                </ul>
-            </div>
-
-            <div class="pic-side-poster con78" data-aos="fade-right">
-                <img src="media/ourservicesE.jpg" alt="">
-            </div>
-        </section>
-
-
-        <section id="activite" style="margin-top: 2em;">
-            <div class="text" style="font-size: 1.4em !important;">
-                Nos activités
-
-            </div>
-            <div class="row" data-aos="fade-down">
-                <div class="col c1">
-                    <div class="front">
-                        <img src="media/light-bulb.jpg" alt="">
-                        <div class="content">
-                            <div class="border-fr"></div>
-                        <div class="name ">Electricité</div>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="border b1"></div>
-                        <div class="name">Electricité</div>
-                        <div class="textP">SwisSysteme dispose d'un service spécialisée dans l'électricité générale et
-                            l'industrie du bâtiment. Appuyée sur des spécialistes hautement qualifiés et sur un
-                            savoir-faire inégalé, SwisSysteme vous propose des solutions sur mesure, répondant aux
-                            exigences d'un travail de qualité. De la réalisation des schémas globaux à l'optimisation
-                            des ressources en passant par le conseil, SwisSysteme vous garantit un service fiable et de
-                            qualité.
-                        </div>
-                    </div>
-                </div>
-                <div class="col c2">
-                    <div class="front">
-                        <img src="media/1.jpg" alt="">
-                       <div class="content">
-                        <div class="border-fr"></div>
-                        <div class="name">Photovoltaïque</div>
-                       </div>
-                    </div>
-                    <div class="back">
-                        <div class="border b2"></div>
-                        <div class="name">Photovoltaïque</div>
-                        <div class="textP">Nous avons pour mission de fournir des solutions solaires photovoltaiques,
-                            respectueuses de l’environnement, avec une qualité de classe mondiale.
-                        </div>
-                    </div>
-                </div>
-                <div class="col c3">
-                    <div class="front">
-                        <img src="media/clima.jpeg" alt="">
-                        <div class="content">
-                            <div class="border-fr"></div>
-                        <div class="name">Climatisation</div>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="border b3"></div>
-                        <div class="name">Climatisation</div>
-                        <div class="textP">Puisque votre bien-être est au cœur de nos préoccupations, SwisSysteme met à
-                            votre disposition son savoir-faire et son expertise pour vous offrir les meilleures
-                            prestations en matière de climatisation et de chauffage.
-                            Forte de sa compétence dans ce domaine, notre équipe vous conseille et vous compagne dans la
-                            réalisation d'installations fiables et optimales qui respectent l'environnement.
-                        </div>
-                    </div>
+                    <div class="line-btm line"></div>
                 </div>
             </div>
-        </section>
+            <section id="particles-js">
+                <div class="our-company" data-aos="fade-up">
+                    <p class="ourcompany">
+                        <img id="logo67" src="media/commas.svg" alt="">
+                        <span>Swissysteme</span> est une société de distribution, d'installation et de conseils. Cette
+                        société
+                        est
+                        née d'une volonté de
+                        répondre au mieux aux attentes des particuliers et industriels dans le secteur d'électricité,
+                        des
+                        énergies
+                        renouvelables, de climatisation et de plomberie.
 
-        <section id="partenaire" style="margin-top: 2em;" data-aos="zoom-in-up">
-            <div class="text" style="font-size: 1.4em !important;">
-                Nos partenaires
-
-            </div>
-            <div class="slider">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="media/Siemens-logo.svg.png"
-                                alt="">
-
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/Logo_Legrand_SA.svg.png"
-                                alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/915f88797869181e6feea6b3154ead66.w2953.h527.png"
-                                alt="">
-                        </div>
-                        <div class="swiper-slide">
-
-                            <img src="media/bitzer.png"
-                                alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/purepng.com-emerson-electric-logologobrand-logoiconslogos-251519940112e9h0r.png"
-                                alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/580b57fcd9996e24bc43c533.png"
-                                alt="">
-                        </div>
-                        <div class="swiper-slide">
-
-                            <img src="media/carrier-logo.png"
-                                alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/img-20170621145726.png"
-                                alt="">
-                        </div>
-                        <div class="swiper-slide">
-
-                            <img src="media/lg-logo-1.png"
-                                alt="">
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
+                    </p>
 
                 </div>
+                <section id="our-services" class="part">
+                    <div class="dt-sec-grp con78" data-aos="fade-up">
+                        <div class="con-secgRP" style="width: fit-content;">
+                            <div class="bg-title">
+                                <div class="text">
+                                    <div class="line-top1 line"></div>
+                                    NOTRE ENGAGMENT
+                                    <div class="line-btm2 line"></div>
 
-            </div>
-        </section>
-    </section>
-    <%- include('components/footer.ejs') %>
+                                </div>
+                            </div>
+                        </div>
+                        <ul>
 
-    <script src="javascript/loader.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="javascript/swiper.js"></script>
-    <script src="javascript/nav.js"></script>
-    <script src="javascript/particles.js"></script>
-    <script src="javascript/setup.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-        once:true,
-         offset: 120, 
-        delay: 500, 
-        duration: 800, 
-        easing: 'ease',
-        once: true, 
-    });
-  </script>
+                            <li>UNE <span>QUALITÉ</span> D'EXÉCUTION ASSURÉE PAR LE <span>PROFESSIONNALISME</span>, DE
+                                NOS
+                                INSTALLATEURS.
+                            </li>
+                            <li>UN <span>SUIVI CONTINU</span> DE LA CONCEPTION AU RACCORDEMENT.</li>
+                            <li>DES PRIX <span>ATTRACTIFS</span> ET COMPÉTITIFS.</li>
+                            <li>DU MATÉRIEL <span>HAUT DE GAMME</span>, GARANTI POUR SON RENDEMENT ET SA LONGÉVITÉ
+                                <span>EXCEPTIONNELS.</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="pic-side-poster con78" data-aos="fade-right">
+                        <img src="media/ourengagement.jpg" alt="">
+                    </div>
+                </section>
+                <section id="our-engagment" class="part part2">
+                    <div class="dt-sec-grp con78" data-aos="fade-right">
+                        <div class="con-secgRP">
+                            <div class="bg-title">
+                                <div class="text">
+                                    <div class="line-top1 line"></div>
+
+                                    NOTRE SERVICES
+                                    <div class="line-btm2 line"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <ul>
+                            <div>
+                                <li>ÊTRE PROCHE DE VOUS</li>
+                                <li>REPONDRE A VOS BESION</li>
+                            </div>
+                            <div>
+                                <li>S'ADAPTER À VOS PLANNINGS</li>
+                                <li>ACCOMPAGNER VOS PROJETS </li>
+                            </div>
+                        </ul>
+                    </div>
+
+                    <div class="pic-side-poster con78" data-aos="fade-right">
+                        <img src="media/ourservicesE.jpg" alt="">
+                    </div>
+                </section>
+
+
+                <section id="activite" style="margin-top: 2em;">
+                    <div class="text" style="font-size: 1.4em !important;">
+                        Nos activités
+
+                    </div>
+                    <div class="row" data-aos="fade-down">
+                        <div class="col c1">
+                            <div class="front">
+                                <img src="media/light-bulb.jpg" alt="">
+                                <div class="content">
+                                    <div class="border-fr"></div>
+                                    <div class="name ">Electricité</div>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="border b1"></div>
+                                <div class="name">Electricité</div>
+                                <div class="textP">SwisSysteme dispose d'un service spécialisée dans l'électricité
+                                    générale et
+                                    l'industrie du bâtiment. Appuyée sur des spécialistes hautement qualifiés et sur un
+                                    savoir-faire inégalé, SwisSysteme vous propose des solutions sur mesure, répondant
+                                    aux
+                                    exigences d'un travail de qualité. De la réalisation des schémas globaux à
+                                    l'optimisation
+                                    des ressources en passant par le conseil, SwisSysteme vous garantit un service
+                                    fiable et de
+                                    qualité.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col c2">
+                            <div class="front">
+                                <img src="media/1.jpg" alt="">
+                                <div class="content">
+                                    <div class="border-fr"></div>
+                                    <div class="name">Photovoltaïque</div>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="border b2"></div>
+                                <div class="name">Photovoltaïque</div>
+                                <div class="textP">Nous avons pour mission de fournir des solutions solaires
+                                    photovoltaiques,
+                                    respectueuses de l’environnement, avec une qualité de classe mondiale.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col c3">
+                            <div class="front">
+                                <img src="media/clima.jpeg" alt="">
+                                <div class="content">
+                                    <div class="border-fr"></div>
+                                    <div class="name">Climatisation</div>
+                                </div>
+                            </div>
+                            <div class="back">
+                                <div class="border b3"></div>
+                                <div class="name">Climatisation</div>
+                                <div class="textP">Puisque votre bien-être est au cœur de nos préoccupations,
+                                    SwisSysteme met à
+                                    votre disposition son savoir-faire et son expertise pour vous offrir les meilleures
+                                    prestations en matière de climatisation et de chauffage.
+                                    Forte de sa compétence dans ce domaine, notre équipe vous conseille et vous compagne
+                                    dans la
+                                    réalisation d'installations fiables et optimales qui respectent l'environnement.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="partenaire" style="margin-top: 2em;" data-aos="zoom-in-up">
+                    <div class="text" style="font-size: 1.4em !important;">
+                        Nos partenaires
+
+                    </div>
+                    <div class="slider">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <% Brands.forEach(el=> { %>
+                                    <div class="swiper-slide">
+                                        <img src="/<%= el.brandImage%> " alt="">
+                                    </div>
+                                    <% }) %>
+                            </div>
+                            <div class="swiper-pagination"></div>
+
+                        </div>
+
+                    </div>
+                </section>
+            </section>
+            <%- include('components/footer.ejs') %>
+
+                <script src="javascript/loader.js"></script>
+                <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                <script src="javascript/swiper.js"></script>
+                <script src="javascript/nav.js"></script>
+                <script src="javascript/particles.js"></script>
+                <script src="javascript/setup.js"></script>
+                <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+                <script>
+                    AOS.init({
+                        once: true,
+                        offset: 120,
+                        delay: 500,
+                        duration: 800,
+                        easing: 'ease',
+                        once: true,
+                    });
+                </script>
 
 </body>
 
