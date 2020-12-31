@@ -208,6 +208,26 @@
 
                     </div>
                 </section>
+                <section id="partenaire" style="margin-top: 2em;" data-aos="zoom-in-up">
+                    <div class="text" style="font-size: 1.4em !important;">
+                        Nos références
+
+                    </div>
+                    <div class="slider">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <% Brands.forEach(el=> { %>
+                                    <div class="swiper-slide">
+                                        <img src="/<%= el.brandImage%> " alt="">
+                                    </div>
+                                    <% }) %>
+                            </div>
+                            <div class="swiper-pagination"></div>
+
+                        </div>
+
+                    </div>
+                </section>
             </section>
             <%- include('components/footer.ejs') %>
 
