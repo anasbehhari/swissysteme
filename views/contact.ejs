@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="css/loader.css">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://cdn.tiny.cloud/1/f8k947uye0wms2r9p7hr673uhrfywgzio2d2j2xfbgljp1qn/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
     <link rel="icon" href="media/logo.svg" type="image/icon type">
 
     <title>Swissysteme Contact | Nʼhésitez pas à nous contacter pour plus dʼinformations</title>
@@ -97,30 +95,17 @@
 
 
                                 </div>
-                                <textarea contenteditable="true" required name="message" id="editor" cols="30" rows="10"
-                                    placeholder="Message"></textarea>
+                                <textarea name="message"></textarea>
+
                             </div>
                             <button name="submit" type="submit">Envoyer</button>
                         </form>
                     </div>
                     <%- include('components/footer.ejs') %>
+                        <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
                         <script>
-                           tinymce.init({
-                                selector: 'textarea',
-                                plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-                                toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
-                                toolbar_mode: 'floating',
-                                tinycomments_mode: 'embedded',
-                                tinycomments_author: 'Author name',
-                                setup: function (editor) {
-                                   editor.on('change',function (e) {
-                                       editor.save();
-                                   });
-                               }
-                            });
+                            CKEDITOR.replace('message');
                         </script>
-
-
                         <script src="javascript/nav.js"></script>
                         <script src="javascript/loader.js"></script>
                         <script src="javascript/closebtn.js"></script>

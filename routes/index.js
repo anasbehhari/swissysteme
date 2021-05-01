@@ -104,14 +104,12 @@ router.get("/produits/:cat",(req,res) => {
                     res.redirect("/")
                 }
                 else {
-                    console.log(cat);
                     Produit.find({ productCategorie: cat.categorieName })
                         .then(products => {
                             if (products == null) {
                                 res.redirect("/")
                             }
                             else {
-                                console.log(products);
 
                                 res.render("produits",{ Categorie: cat,Products: products })
                             }
