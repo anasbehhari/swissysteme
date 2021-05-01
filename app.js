@@ -80,8 +80,6 @@ mongoose
     .then(() => console.log("MongoDb Connected..."))
     .catch(err => console.log(err))
 
-
-
 //Listen On
 
 
