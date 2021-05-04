@@ -76,7 +76,7 @@ app.get("*",(req,res)=>{
 
 
 mongoose
-    .connect("mongodb+srv://saveitAdmin:LBKxCIrBP7SnJj0A@saveit.uftsd.mongodb.net/swissysteme?retryWrites=true&w=majority",{ useUnifiedTopology: true,useNewUrlParser: true,useFindAndModify: true})
+    .connect(process.env.DBURL,{ useUnifiedTopology: true,useNewUrlParser: true,useFindAndModify: true})
     .then(() => console.log("MongoDb Connected..."))
     .catch(err => console.log(err))
 
